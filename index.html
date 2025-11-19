@@ -3,86 +3,158 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Invitación - Jaret & Diana</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Jaret & Diana — Invitación</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
   <meta name="description" content="Invitación de boda - Jaret & Diana">
 </head>
 <body>
   <main class="container">
+
+    <!-- HERO / PORTADA -->
     <header class="hero">
-      <img src="images/portada.jpg" alt="Portada" class="hero-img" id="heroImg">
-      <h1 class="title">Jaret & Diana</h1>
-      <p class="subtitle">El cielo baja a la tierra cada vez que ella se detiene frente al sol.</p>
-      <div class="controls">
-        <button id="playBtn" class="btn">▶︎ Escuchar canción</button>
-        <audio id="bgAudio" src="audio/tema.mp3" preload="none"></audio>
+      <div class="paper-overlay"></div>
+      <img src="assets/img/portada.jpeg" alt="Portada" class="hero-img" id="heroImg">
+      
+      <div class="verse">
+        <p class="verse-text">
+          "Por encima de todo, vístanse de<br>
+          amor, que es el vínculo perfecto"
+        </p>
+        <p class="verse-ref">— Colosenses 3:14</p>
+      </div>
+
+      <div class="semaforo-wrap">
+        <img src="assets/img/semaforo.png" alt="semaforo" class="semaforo">
+      </div>
+
+      <!-- Texto curvo: Great Vibes en SVG -->
+      <div class="names-wrap" aria-hidden="true">
+        <svg viewBox="0 0 900 160" class="arc-svg">
+          <defs>
+            <path id="arcPath" d="M30,110 Q450,-30 870,110" />
+          </defs>
+          <text class="arc-text">
+            <textPath href="#arcPath" startOffset="50%" text-anchor="middle">
+              Jaret Isaac &amp; Diana Laura — ¡Nos Casamos!
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <div class="carro-wrap">
+        <img src="assets/img/carro.png" alt="carro" class="carro">
+      </div>
+
+      <div class="audio-controls">
+        <button id="tryPlayBtn" class="btn small">🔊 Reproducir música</button>
+        <button id="muteBtn" class="btn small muted">🔇 Silenciar</button>
+        <audio id="bgAudio" src="assets/music/musica.mp3" preload="auto" loop></audio>
       </div>
     </header>
 
+    <!-- COUNTDOWN -->
     <section class="countdown">
-      <h2>Faltan</h2>
+      <h2 class="merri">Faltan:</h2>
       <div id="countdownTimer" class="timer">--d --h --m --s</div>
+      <div class="cal-img">
+        <img src="assets/img/calendario.png" alt="calendario" class="fullimg">
+      </div>
     </section>
 
+    <!-- DETALLES -->
     <section class="details">
-      <h2>Detalles</h2>
-      <p><strong>Fecha:</strong> 12 de Diciembre 2025</p>
-      <p><strong>Hora:</strong> 17:00</p>
-      <p><strong>Lugar:</strong> Hotel Costa Plateada</p>
-      <p><a id="mapsLink" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+      <div class="section-head">
+        <img src="assets/img/marriage.png" alt="marriage" class="head-img">
+      </div>
+
+      <div class="detail-block">
+        <h3 class="merri">Ceremonia Religiosa</h3>
+        <p class="merri small">Hora: 03:00 PM</p>
+      </div>
+
+      <div class="detail-block">
+        <img src="assets/img/croissant.png" alt="croissant" class="small-icon">
+        <h3 class="merri">Lugar de recepción</h3>
+        <p class="merri">Pan &amp; Paz - Panadería Francesa<br>León, Nicaragua</p>
+        <p><a id="mapsLink" class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">Ver ubicación</a></p>
+      </div>
     </section>
 
-    <section class="calendar">
-      <h2>Calendario</h2>
-      <div id="calendar"></div>
-      <p class="note">Haz click en la fecha para <strong>Agregar al calendario</strong> (iOS/Android).</p>
-    </section>
-
+    <!-- RSVP -->
     <section class="rsvp">
-      <h2>Confirmá tu asistencia</h2>
+      <h2 class="merri">Confirmá tu asistencia</h2>
       <form id="rsvpForm">
-        <label>Nombre completo<input type="text" name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Asistirás?
+        <label>Nombre completo
+          <input type="text" name="name" required>
+        </label>
+
+        <label>Asistirá?
           <select name="attend" required>
             <option value="">Seleccionar</option>
             <option value="Sí">Sí</option>
             <option value="No">No</option>
           </select>
         </label>
+
         <label>Platillo
-          <select name="dish" required>
+          <select name="platillo" required>
             <option value="">Seleccionar</option>
-            <option value="Carne">Carne</option>
-            <option value="Pescado">Pescado</option>
-            <option value="Vegetariano">Vegetariano</option>
+            <option value="Baguette Veggie">Baguette Veggie</option>
+            <option value="Panini Gourmet Camembert">Panini Gourmet Camembert</option>
+            <option value="Crema Sandwich">Crema Sandwich</option>
           </select>
         </label>
-        <label>Mensaje<textarea name="message" rows="3"></textarea></label>
+
+        <label>Bebida
+          <select name="bebida" required>
+            <option value="">Seleccionar</option>
+            <option value="Fresa &amp; Pepino">Fresa &amp; Pepino</option>
+            <option value="Arandano &amp; Limon">Arandano &amp; Limon</option>
+            <option value="Limonada de jengibre">Limonada de jengibre</option>
+          </select>
+        </label>
+
         <button type="submit" class="btn">Enviar RSVP</button>
-        <div id="formMsg" role="status"></div>
+        <div id="formMsg" role="status" aria-live="polite"></div>
       </form>
     </section>
 
+    <!-- DRESS CODE -->
     <section class="dresscode">
-      <h2>Dress code</h2>
-      <p>Elegante informal / tonos tierra y burdeos. Por favor evita blanco.</p>
+      <h2 class="merri">Dress code</h2>
+      <p class="merri">Formal. Favor evitar blanco.</p>
     </section>
 
+    <!-- GALLERY / IMAGES -->
     <section class="gallery">
-      <h2>Fotos</h2>
+      <h2 class="merri">Fotos</h2>
       <div class="grid">
-        <img src="images/1.jpg" alt="foto1">
-        <img src="images/2.jpg" alt="foto2">
-        <img src="images/3.jpg" alt="foto3">
+        <img src="assets/img/1.jpg" alt="foto1">
+        <img src="assets/img/2.jpg" alt="foto2">
+        <img src="assets/img/3.jpg" alt="foto3">
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="credits">
-      <p>Gracias por acompañarnos</p>
+      <div class="footer-left">
+        <p class="merri footer-text">
+          Nuestra felicidad solo está completa cuando la compartimos<br>
+          con las personas que amamos.<br><br>
+          ¡Muchas Gracias!
+        </p>
+      </div>
+      <div class="footer-right">
+        <img src="assets/img/dos.png" alt="dos" class="dos-img">
+      </div>
     </footer>
+
   </main>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
