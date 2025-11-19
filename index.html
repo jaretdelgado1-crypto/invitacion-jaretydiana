@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invitación - Jaret & Diana</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Invitación de boda - Jaret & Diana">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <img src="images/portada.jpg" alt="Portada" class="hero-img" id="heroImg">
+      <h1 class="title">Jaret & Diana</h1>
+      <p class="subtitle">El cielo baja a la tierra cada vez que ella se detiene frente al sol.</p>
+      <div class="controls">
+        <button id="playBtn" class="btn">▶︎ Escuchar canción</button>
+        <audio id="bgAudio" src="audio/tema.mp3" preload="none"></audio>
+      </div>
+    </header>
+
+    <section class="countdown">
+      <h2>Faltan</h2>
+      <div id="countdownTimer" class="timer">--d --h --m --s</div>
+    </section>
+
+    <section class="details">
+      <h2>Detalles</h2>
+      <p><strong>Fecha:</strong> 12 de Diciembre 2025</p>
+      <p><strong>Hora:</strong> 17:00</p>
+      <p><strong>Lugar:</strong> Hotel Costa Plateada</p>
+      <p><a id="mapsLink" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+    </section>
+
+    <section class="calendar">
+      <h2>Calendario</h2>
+      <div id="calendar"></div>
+      <p class="note">Haz click en la fecha para <strong>Agregar al calendario</strong> (iOS/Android).</p>
+    </section>
+
+    <section class="rsvp">
+      <h2>Confirmá tu asistencia</h2>
+      <form id="rsvpForm">
+        <label>Nombre completo<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Asistirás?
+          <select name="attend" required>
+            <option value="">Seleccionar</option>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+          </select>
+        </label>
+        <label>Platillo
+          <select name="dish" required>
+            <option value="">Seleccionar</option>
+            <option value="Carne">Carne</option>
+            <option value="Pescado">Pescado</option>
+            <option value="Vegetariano">Vegetariano</option>
+          </select>
+        </label>
+        <label>Mensaje<textarea name="message" rows="3"></textarea></label>
+        <button type="submit" class="btn">Enviar RSVP</button>
+        <div id="formMsg" role="status"></div>
+      </form>
+    </section>
+
+    <section class="dresscode">
+      <h2>Dress code</h2>
+      <p>Elegante informal / tonos tierra y burdeos. Por favor evita blanco.</p>
+    </section>
+
+    <section class="gallery">
+      <h2>Fotos</h2>
+      <div class="grid">
+        <img src="images/1.jpg" alt="foto1">
+        <img src="images/2.jpg" alt="foto2">
+        <img src="images/3.jpg" alt="foto3">
+      </div>
+    </section>
+
+    <footer class="credits">
+      <p>Gracias por acompañarnos</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
