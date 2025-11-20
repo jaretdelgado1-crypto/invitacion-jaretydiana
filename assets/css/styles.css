@@ -71,11 +71,22 @@ body{
 .merri{font-family:"Merriweather", serif}
 
 /* details */
-.details{background:rgba(255,255,255,0.6);padding:16px;border-radius:8px;margin-top:14px}
+.details{
+  background:rgba(255,255,255,0.6);
+  padding:16px;
+  border-radius:8px;
+  margin-top:14px;
+}
+
 .section-head{text-align:center}
 .head-img{height:60px;object-fit:contain}
 .detail-block{margin-top:12px}
 .small-icon{height:36px;vertical-align:middle;margin-right:8px}
+
+/* Centramos Ceremonia y Recepción */
+.details .detail-block {
+    text-align: center;
+}
 
 /* RSVP */
 .rsvp{background:rgba(255,255,255,0.6);padding:18px;border-radius:8px;margin-top:14px}
