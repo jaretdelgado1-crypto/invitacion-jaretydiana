@@ -51,6 +51,9 @@ body{
 .names-wrap{margin-top:6px; overflow:visible}
 .arc-svg{width:100%;height:120px}
 .arc-text{font-family:'Great Vibes', cursive; font-size:40px; fill:var(--accent);}
+.names-wrap { margin-top: 20px; }
+.arc-svg { height: 180px; }
+.arc-text { font-size: 44px; }
 
 /* carro */
 .carro-wrap{margin-top:8px}
