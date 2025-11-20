@@ -32,18 +32,31 @@
       </div>
 
       <!-- Texto curvo: Great Vibes en SVG -->
-      <div class="names-wrap" aria-hidden="true">
-        <svg viewBox="0 0 900 160" class="arc-svg">
-          <defs>
-            <path id="arcPath" d="M30,110 Q450,-30 870,110" />
-          </defs>
-          <text class="arc-text">
-            <textPath href="#arcPath" startOffset="50%" text-anchor="middle">
-              Jaret Isaac &amp; Diana Laura — ¡Nos Casamos!
-            </textPath>
-          </text>
-        </svg>
-      </div>
+<div class="names-wrap">
+  <svg viewBox="0 0 900 220" class="arc-svg">
+
+    <defs>
+      <!-- Arco superior -->
+      <path id="arc1" d="M60,130 Q450,10 840,130" />
+      <!-- Arco inferior -->
+      <path id="arc2" d="M70,170 Q450,50 830,170" />
+    </defs>
+
+    <text class="arc-text">
+      <textPath href="#arc1" startOffset="50%" text-anchor="middle">
+        Jaret Isaac &amp; Diana Laura
+      </textPath>
+    </text>
+
+    <text class="arc-text">
+      <textPath href="#arc2" startOffset="50%" text-anchor="middle">
+        ¡Nos Casamos!
+      </textPath>
+    </text>
+
+  </svg>
+</div>
+
 
       <div class="carro-wrap">
         <img src="assets/img/carro.png" alt="carro" class="carro">
