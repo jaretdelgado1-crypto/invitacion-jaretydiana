@@ -149,7 +149,7 @@ form.addEventListener('submit', async (e) => {
   try {
     const resp = await fetch(GAS_ENDPOINT, {
       method: 'POST',
-      headers: {'Content-Type':'application/json'},
+     // headers: {'Content-Type':'application/json'},
       body: JSON.stringify(payload)
     });
     const j = await resp.json();
