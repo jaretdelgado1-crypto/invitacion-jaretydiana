@@ -159,6 +159,7 @@ footer.credits{display:flex;gap:16px;align-items:center;justify-content:space-be
     max-width: 380px;
     display: block;
     margin: 0 auto 10px auto;
+    z-index: 0;
 }
 
 .menu-title {
@@ -208,6 +209,8 @@ footer.credits{display:flex;gap:16px;align-items:center;justify-content:space-be
 }
 
 .menu-container *{ position: relative;  z-index: 2;       /* texto adelante  falta el } despues de cerrar esto*/ }
+
+
 /* ===================== AJUSTA EL CALENDARIO AL ANCHO DEL CELULAR ===================== */
 .cal-img img{
     width:100%;
