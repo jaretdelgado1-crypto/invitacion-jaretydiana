@@ -117,3 +117,69 @@ footer.credits{display:flex;gap:16px;align-items:center;justify-content:space-be
   .carro{max-height:120px}
   .footer-right{display:none}
 }
+/* ===================== SECCIÓN MENÚ ===================== */
+
+.menu-section {
+    background: rgba(255,255,255,0.7);
+    margin-top: 40px;
+    padding: 20px 10px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.menu-container {
+    text-align: center;
+    position: relative;
+}
+
+.menu-lazo {
+    width: 90%;
+    max-width: 380px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.menu-title {
+    font-family: "Great Vibes", cursive;
+    font-size: 42px;
+    color: #7a1e1e;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.menu-item {
+    margin-bottom: 28px;
+}
+
+.menu-item-title {
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    color: #7a1e1e;
+    font-size: 20px;
+}
+
+.menu-item p {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+}
+
+.menu-icon {
+    width: 30px;
+    display: block;
+    margin: 10px auto;
+}
+
+.drinks-icon {
+    width: 26px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.menu-pareja {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 120px;
+    opacity: 0.95;
+}
