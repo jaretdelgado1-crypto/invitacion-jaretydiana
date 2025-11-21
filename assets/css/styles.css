@@ -46,7 +46,7 @@ body{
   .verse{
     bottom:12px;
     left:12px;
-    font-size:14px;
+    font-size:10px;
     max-width:75%;
   }
 }
@@ -73,7 +73,7 @@ body{
 }
 
 .arc-text {
-  font-size: 70px;      /* nombres al doble de tamaño */
+  font-size: 100px;      /* nombres al doble de tamaño */
   fill: var(--accent);
 }
 
@@ -203,14 +203,11 @@ footer.credits{display:flex;gap:16px;align-items:center;justify-content:space-be
     right: 10px;
     bottom: 0;
     width: 120px;
-    opacity: 0.25;
+    opacity: 0.95;
   z-index: 0;      /* detrás del texto */
 }
 
-.menu-container *{
-    position: relative;
-    z-index: 2;       /* texto adelante */
-}
+/*.menu-container *{ position: relative;  z-index: 2;       /* texto adelante  falta el } despues de cerrar esto*/
 /* ===================== AJUSTA EL CALENDARIO AL ANCHO DEL CELULAR ===================== */
 .cal-img img{
     width:100%;
