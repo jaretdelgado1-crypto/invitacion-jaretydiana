@@ -61,7 +61,7 @@ body{
 /* Names arc */
 .names-wrap{margin-top:6px; overflow:visible}
 .arc-svg{width:100%;height:120px}
-.arc-text{font-family:'Great Vibes', cursive; font-size:40px; fill:var(--accent);}
+.arc-text{font-family:'Great Vibes', cursive; font-size:80px; fill:var(--accent);}
 .names-wrap {
   margin-top: -5px;     /* sube los nombres y reduce espacio con semáforo */
   margin-bottom: -10px; /* acerca el carro */
@@ -202,7 +202,7 @@ footer.credits{display:flex;gap:16px;align-items:center;justify-content:space-be
     position: absolute;
     right: 10px;
     bottom: 0;
-    width: 1400px;
+    width: 120px;
     opacity: 0.25;
   z-index: 0;      /* detrás del texto */
 }
