@@ -1,7 +1,7 @@
 /* script.js - Invitación Jaret & Diana */
 
 // ======= CONFIG ========
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwEH0XF8-4Ll8UvagzVbTBsLGXN5cKH9aXN9wXeQN-IfysojB5fFFabd9RG3An7BesaBQ/exec'; // <<--- PONÉ AQUI la URL de Apps Script (termina en /exec)
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzgK6hNBU0NVitQ1oKWaKRh1_R7ewIdFLsJuSLyA8iqS6vx588oUxDGTUZsqK1zm-XxJw/exec'; // <<--- PONÉ AQUI la URL de Apps Script (termina en /exec)
 const TARGET_DATE = new Date('2025-12-22T15:00:00'); // 22 dic 2025 15:00 local
 
 // ======= AUDIO / PLAYBACK (Opción C) ========
