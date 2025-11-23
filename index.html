@@ -63,7 +63,9 @@
       </div>
 
       <div class="audio-controls">
-        <button id="tryPlayBtn" class="btn small">🔊 Reproducir música</button>
+        <button id="tryPlayBtn" class="btn small" onclick="document.getElementById('bgAudio').play();">
+  🔊 Reproducir música
+</button>
         <button id="muteBtn" class="btn small muted">🔇 Silenciar</button>
         <audio id="bgAudio" src="assets/music/musica.mp3" preload="auto" loop></audio>
       </div>
@@ -73,9 +75,22 @@
     <section class="countdown">
       <h2 class="merri">Faltan:</h2>
       <div id="countdownTimer" class="timer">--d --h --m --s</div>
-      <div class="cal-img">
-        <img src="assets/img/calendario.png" alt="calendario" class="fullimg">
-      </div>
+     
+<h3 class="merri" style="margin-top:18px;">
+  Queremos compartir contigo<br>la felicidad de nuestra unión
+</h3>
+
+<h2 style="text-align:center; font-family:'Great Vibes'; font-size:42px; margin:10px 0 -6px;">
+  Diciembre
+</h2>
+<p style="text-align:right; font-family:'Merriweather'; font-size:22px; margin:0 18px 10px 0;">
+  2025
+</p>
+
+<div class="cal-img">
+  <img src="assets/img/calendario.png" alt="calendario" class="fullimg">
+</div>
+      
     </section>
 
     <!-- DETALLES -->
