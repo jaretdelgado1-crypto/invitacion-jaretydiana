@@ -56,7 +56,7 @@ function updateCountdown(){
   const minutes = Math.floor(diff / (1000*60));
   diff -= minutes*(1000*60);
   const seconds = Math.floor(diff / 1000);
-  el.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  el.textContent = `${days}d ${hours}h ${minutes}m`;
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
