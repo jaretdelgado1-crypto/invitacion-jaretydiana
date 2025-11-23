@@ -44,10 +44,12 @@ body{
 }
 @media (max-width:600px){
   .verse{
-    bottom:12px;
-    left:12px;
-    font-size:10px;
-    max-width:75%;
+    bottom: 16px;
+    top: auto;        /* evita que suba */
+    left: 14px;
+    right: auto;
+    max-width: 80%;
+    font-size: 15px;
   }
 }
 
@@ -56,7 +58,7 @@ body{
 
 /* semaforo */
 .semaforo-wrap{margin-top:12px}
-.semaforo{width:68px;height:auto;display:inline-block}
+.semaforo{width:130px;height:auto;display:inline-block}
 
 /* Names arc */
 .names-wrap{margin-top:6px; overflow:visible}
@@ -69,17 +71,28 @@ body{
 }
 
 .arc-svg {
-  height: 150px;        /* reduce el arco */
+  width: 100%;
+  height: 200px;     /* da espacio suficiente para los 2 textos curvos */
 }
 
+
 .arc-text {
-  font-size: 200px;      /* nombres al doble de tamaño */
+  font-family:'Great Vibes', cursive;
   fill: var(--accent);
+  font-size: 60px;       /* tamaño grande y controlado */
 }
+
+/* Tamaño especial para celulares */
+@media (max-width:600px){
+  .arc-text{
+    font-size: 36px;     /* tamaño adecuado para móviles */
+  }
+}
+
 
 /* carro */
 .carro-wrap{margin-top:8px}
-.carro{width:100%;height:auto;max-height:160px;object-fit:contain}
+.carro{width:100%;height:auto;max-height:none;object-fit:contain}
 
 /* audio controls */
 .audio-controls{display:flex;gap:8px;justify-content:center;margin-top:12px}
