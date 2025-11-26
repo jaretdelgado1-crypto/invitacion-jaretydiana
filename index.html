@@ -9,260 +9,216 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Invitación de boda - Jaret & Diana">
 </head>
 
 <body>
+  <main class="container">
 
-<main class="container">
+    <!-- ===================== HERO / PORTADA ===================== -->
+    <header class="hero">
+      <div class="paper-overlay"></div>
 
-  <!-- ============================
-          PORTADA / HERO
-  =============================== -->
-  <header class="hero">
-    <img src="assets/img/portada.jpeg" class="hero-img">
+      <img src="assets/img/portada.jpeg" alt="Portada" class="hero-img">
 
-    <!-- Versículo – parte inferior izquierda -->
-    <div class="verse">
-      <p class="verse-text">
-        “Por encima de todo, vístanse de<br>
-        amor, que es el vínculo perfecto”
+      <!-- Versículo (abajo izquierda) -->
+      <div class="verse">
+        <p class="verse-text">
+          "Por encima de todo, vístanse de<br>
+          amor, que es el vínculo perfecto"
+        </p>
+        <p class="verse-ref">— Colosenses 3:14</p>
+      </div>
+
+      <!-- Semáforo -->
+      <div class="semaforo-wrap">
+        <img src="assets/img/semaforo.png" alt="semaforo" class="semaforo">
+      </div>
+
+      <!-- Texto curvo -->
+      <div class="names-wrap">
+        <svg viewBox="0 0 900 220" class="arc-svg">
+          <defs>
+            <path id="arc1" d="M60,130 Q450,10 840,130" />
+            <path id="arc2" d="M70,170 Q450,50 830,170" />
+          </defs>
+
+          <text class="arc-text">
+            <textPath href="#arc1" startOffset="50%" text-anchor="middle">
+              Jaret Isaac &amp; Diana Laura
+            </textPath>
+          </text>
+
+          <text class="arc-text">
+            <textPath href="#arc2" startOffset="50%" text-anchor="middle">
+              ¡Nos Casamos!
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <!-- Carro ajustado a ancho completo -->
+      <div class="carro-wrap">
+        <img src="assets/img/carro.png" alt="carro" class="carro">
+      </div>
+
+      <!-- Audio -->
+      <div class="audio-controls">
+        <button id="tryPlayBtn" class="btn small">🔊 Reproducir música</button>
+        <button id="muteBtn" class="btn small muted">🔇 Silenciar</button>
+        <audio id="bgAudio" src="assets/music/musica.mp3" preload="auto" loop></audio>
+      </div>
+    </header>
+
+    <!-- ===================== COUNTDOWN ===================== -->
+    <section class="countdown">
+      <h2 class="merri">Faltan:</h2>
+      <div id="countdownTimer" class="timer">--d --h --m --s</div>
+
+      <!-- Texto especial arriba del calendario -->
+      <p class="merri" style="font-size:18px; margin-top:10px;">
+        Queremos compartir contigo<br>la felicidad de nuestra unión
       </p>
-      <p class="verse-ref">— Colosenses 3:14</p>
-    </div>
 
-    <!-- Semáforo -->
-    <div class="semaforo-wrap">
-      <img src="assets/img/semaforo.png" class="semaforo">
-    </div>
-
-    <!-- Nombres curvos -->
-    <div class="names-wrap">
-      <svg viewBox="0 0 900 220" class="arc-svg">
-        <defs>
-          <path id="arc1" d="M60,130 Q450,10 840,130" />
-          <path id="arc2" d="M70,170 Q450,50 830,170" />
-        </defs>
-
-        <text class="arc-text">
-          <textPath href="#arc1" startOffset="50%" text-anchor="middle">
-            Jaret Isaac & Diana Laura
-          </textPath>
-        </text>
-
-        <text class="arc-text">
-          <textPath href="#arc2" startOffset="50%" text-anchor="middle">
-            ¡Nos Casamos!
-          </textPath>
-        </text>
-      </svg>
-    </div>
-
-    <!-- Carro -->
-    <div class="carro-wrap">
-      <img src="assets/img/carro.png" class="carro">
-    </div>
-
-    <!-- Controles de audio -->
-    <div class="audio-controls">
-      <button id="tryPlayBtn" class="btn small">🔊 Reproducir música</button>
-      <button id="muteBtn" class="btn small muted">🔇 Silenciar</button>
-      <audio id="bgAudio" src="assets/music/musica.mp3" preload="auto" loop></audio>
-    </div>
-  </header>
-
-
-  <!-- ============================
-        CUENTA REGRESIVA
-  =============================== -->
-  <section class="countdown">
-    <h2 class="merri">Faltan:</h2>
-    <div id="countdownTimer" class="timer"></div>
-
-    <!-- Texto sobre el calendario -->
-    <p class="countdown-msg">
-      Queremos compartir contigo<br>la felicidad de nuestra unión
-    </p>
-
-    <p class="countdown-month">
-      Diciembre
-    </p>
-
-    <p class="countdown-year">
-      2025
-    </p>
-
-    <div class="cal-img">
-      <img src="assets/img/calendario.png" alt="calendario">
-    </div>
-
-    <!-- Bandera debajo del calendario -->
-    <img src="assets/img/bandera.png" class="bandera-img">
-  </section>
-
-
-
-  <!-- ============================
-           DETALLES
-  =============================== -->
-  <section class="details">
-    <div class="section-head">
-      <img src="assets/img/marriage.png" class="head-img">
-    </div>
-
-    <div class="detail-block">
-      <h3 class="merri">Ceremonia Religiosa</h3>
-      <p class="merri small">Hora: 03:00 PM</p>
-    </div>
-
-    <div class="detail-block">
-      <img src="assets/img/croissant.png" class="small-icon">
-      <h3 class="merri">Lugar de recepción</h3>
-      <p class="merri">Pan & Paz - Panadería Francesa<br>León, Nicaragua</p>
-      <p><a class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank">Ver ubicación</a></p>
-    </div>
-  </section>
-
-
-
-  <!-- ============================
-              MENÚ
-  =============================== -->
-  <section class="menu-section">
-
-    <div class="menu-container">
-
-      <h2 class="menu-title">Menú</h2>
-
-      <div class="menu-item">
-        <h3 class="menu-item-title">Baguette Veggie</h3>
-        <p>Verduras asadas con salsa<br>de marañón y hierbas</p>
-        <img src="assets/img/icono_vegetariano.jpeg" class="menu-icon">
-      </div>
-
-      <div class="menu-item">
-        <h3 class="menu-item-title">Panini Gourmet<br>Camembert</h3>
-        <p>
-          Cremoso queso camembert,<br>
-          manzana, espinaca fresca,<br>
-          mostaza-miel aderezo
-        </p>
-        <img src="assets/img/icono_vegano.jpeg" class="menu-icon">
-      </div>
-
-      <div class="menu-item">
-        <h3 class="menu-item-title">Crema y Sandwich</h3>
-        <p>
-          Crema especial con su opción de sándwich:<br>
-          • Verduras y pesto<br>
-          • Pollo o jamón y queso<br>
-          (pan blanco o pan integral)
-        </p>
-      </div>
-
-      <div class="menu-item">
-        <h3 class="menu-item-title">Bebidas</h3>
-        <p>
-          Refrescante agua con gas con<br>
-          frutas & hierbas<br><br>
-          Fresa & Pepino<br>
-          Arándano & Limón<br>
-          Limonada de jengibre
-        </p>
-      </div>
-
-      <!-- Leyenda al fondo -->
-      <div class="menu-legends">
-        <div>
-          <img src="assets/img/icono_vegetariano.jpeg">
-          <span>Vegetariano</span>
-        </div>
-        <div>
-          <img src="assets/img/icono_vegano.jpeg">
-          <span>Vegano</span>
-        </div>
-      </div>
-
-      <!-- Imagen pareja abajo derecha -->
-      <img src="assets/img/menu_pareja.jpeg" class="menu-pareja">
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ============================
-              RSVP
-  =============================== -->
-  <section class="rsvp">
-    <h2 class="merri">Confirmá tu asistencia</h2>
-
-    <form id="rsvpForm">
-      <label>Nombre completo
-        <input type="text" name="name" required>
-      </label>
-
-      <label>Asistirá?
-        <select name="attend" required>
-          <option value="">Seleccionar</option>
-          <option value="Sí">Sí</option>
-          <option value="No">No</option>
-        </select>
-      </label>
-
-      <label>Platillo
-        <select name="platillo" required>
-          <option value="">Seleccionar</option>
-          <option value="Baguette Veggie">Baguette Veggie</option>
-          <option value="Panini Gourmet Camembert">Panini Gourmet Camembert</option>
-          <option value="Crema Sandwich">Crema Sandwich</option>
-        </select>
-      </label>
-
-      <label>Bebida
-        <select name="bebida" required>
-          <option value="">Seleccionar</option>
-          <option value="Fresa & Pepino">Fresa & Pepino</option>
-          <option value="Arandano & Limón">Arandano & Limón</option>
-          <option value="Limonada de jengibre">Limonada de jengibre</option>
-        </select>
-      </label>
-
-      <button class="btn" type="submit">Enviar RSVP</button>
-      <div id="formMsg"></div>
-    </form>
-  </section>
-
-
-
-  <!-- ============================
-             DRESS CODE
-  =============================== -->
-  <section class="dresscode">
-    <h2 class="merri">Dress code</h2>
-    <p class="merri">Formal. Favor evitar blanco.</p>
-  </section>
-
-
-  <!-- ============================
-               FOOTER
-  =============================== -->
-  <footer class="credits">
-    <div class="footer-left">
-      <p class="merri footer-text">
-        Nuestra felicidad solo está completa cuando la compartimos<br>
-        con las personas que amamos.<br><br>
-        ¡Muchas Gracias!
+      <p style="margin:0; font-family:'Great Vibes', cursive; font-size:36px;">Diciembre</p>
+      <p style="margin:0; text-align:right; font-family:'Merriweather'; font-size:18px; padding-right:12px;">
+        2025
       </p>
-    </div>
 
-    <div class="footer-right">
-      <img src="assets/img/dos.png" class="dos-img">
-    </div>
-  </footer>
+      <!-- Calendario -->
+      <div class="cal-img">
+        <img src="assets/img/calendario.png" alt="calendario">
+      </div>
 
-</main>
+      <!-- Bandera (pequeña, esquina inferior derecha del calendario) -->
+      <img src="assets/img/bandera.png" alt="bandera" class="bandera-calendario">
+    </section>
 
-<script src="assets/js/script.js"></script>
+    <!-- ===================== DETALLES ===================== -->
+    <section class="details">
+
+      <div class="detail-block ceremony-block">
+        <h3 class="merri">Ceremonia Religiosa</h3>
+        <p class="merri">Hora: 03:00 PM</p>
+      </div>
+
+      <div class="detail-block ceremony-block">
+        <h3 class="merri">Lugar de recepción</h3>
+        <p class="merri">Pan &amp; Paz - Panadería Francesa<br>León, Nicaragua</p>
+        <p>
+          <a class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">
+            Ver ubicación
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== MENÚ ===================== -->
+    <section class="menu-section">
+      <div class="menu-container">
+
+        <h2 class="menu-title">Menú</h2>
+
+        <!-- Platillos -->
+        <div class="menu-item">
+          <h3 class="menu-item-title">Baguette Veggie</h3>
+          <p>Verduras asadas con salsa<br>de marañón y hierbas</p>
+        </div>
+
+        <div class="menu-item">
+          <h3 class="menu-item-title">Panini Gourmet Camembert</h3>
+          <p>Cremoso camembert, manzana,<br>espinaca y mostaza-miel</p>
+        </div>
+
+        <div class="menu-item">
+          <h3 class="menu-item-title">Crema y Sándwich</h3>
+          <p>
+            Crema especial con sándwich a elegir:<br>
+            Verduras y pesto — Pollo — Jamón & Queso
+          </p>
+        </div>
+
+        <div class="menu-item">
+          <h3 class="menu-item-title">Bebidas</h3>
+          <p>
+            Agua gasificada con frutas:<br>
+            Fresa & Pepino — Arándano & Limón — Limonada de jengibre
+          </p>
+        </div>
+
+        <!-- Leyenda vegetariano / vegano -->
+        <div class="menu-legends">
+          <div>
+            <img src="assets/img/icono_vegetariano.jpeg" alt="Vegetariano">
+            <span>Vegetariano</span>
+          </div>
+
+          <div>
+            <img src="assets/img/icono_vegano.jpeg" alt="Vegano">
+            <span>Vegano</span>
+          </div>
+        </div>
+
+        <!-- Imagen pareja abajo derecha -->
+        <img src="assets/img/menu_pareja.jpeg" alt="pareja" class="menu-pareja">
+      </div>
+    </section>
+
+    <!-- ===================== RSVP ===================== -->
+    <section class="rsvp">
+      <form id="rsvpForm">
+        <label>Nombre completo
+          <input type="text" name="name" required>
+        </label>
+
+        <label>Asistirá?
+          <select name="attend" required>
+            <option value="">Seleccionar</option>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+          </select>
+        </label>
+
+        <label>Platillo
+          <select name="platillo" required>
+            <option value="">Seleccionar</option>
+            <option value="Baguette Veggie">Baguette Veggie</option>
+            <option value="Panini Gourmet Camembert">Panini Gourmet Camembert</option>
+            <option value="Crema Sandwich">Crema Sandwich</option>
+          </select>
+        </label>
+
+        <label>Bebida
+          <select name="bebida" required>
+            <option value="">Seleccionar</option>
+            <option value="Fresa &amp; Pepino">Fresa &amp; Pepino</option>
+            <option value="Arándano &amp; Limón">Arándano &amp; Limón</option>
+            <option value="Limonada de jengibre">Limonada de jengibre</option>
+          </select>
+        </label>
+
+        <button type="submit" class="btn">Enviar RSVP</button>
+        <div id="formMsg" role="status"></div>
+      </form>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="credits">
+      <div class="footer-left">
+        <p class="merri footer-text">
+          Nuestra felicidad solo está completa cuando la compartimos<br>
+          con las personas que amamos.<br><br>
+          ¡Muchas Gracias!
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <img src="assets/img/dos.png" alt="dos" class="dos-img">
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
