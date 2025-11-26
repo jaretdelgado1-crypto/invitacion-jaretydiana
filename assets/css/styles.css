@@ -1,375 +1,345 @@
-/* =========================================================
-   STYLES.CSS - Invitación de boda Jaret & Diana
-   ========================================================= */
-
-/* ------------------------------
-   VARIABLES DE COLOR Y ANCHO
--------------------------------- */
+/* ==========================================================
+   ESTILOS GENERALES
+========================================================== */
 :root{
   --accent:#003865;
-  --bg:#f7efe6;      /* beige claro */
+  --bg:#f7efe6;
   --muted:#6b6b6b;
   --paper:#f1eadf;
   --container:980px;
-  --vino:#8A2B2B;    /* rojo vino */
+
+  /* colores especiales */
+  --vino:#8A2B2B;
 }
 
-/* ------------------------------
-   FONDO TEXTURIZADO PAPEL
--------------------------------- */
 body{
   margin:0;
-  font-family: "Merriweather", Georgia, serif;
+  font-family:"Merriweather", serif;
   background:
-    linear-gradient( rgba(255,255,255,0.35), rgba(255,255,255,0.35) ),
-    repeating-linear-gradient( -45deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 6px ),
+    linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.02) 0, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 6px),
     var(--bg);
   color:#222;
-  -webkit-font-smoothing:antialiased;
 }
 
 .container{
   max-width:var(--container);
   margin:0 auto;
-  padding:22px;
+  padding:20px;
 }
 
-/* =========================================================
-   PORTADA (HERO)
-========================================================= */
 
+/* ==========================================================
+   HERO / PORTADA
+========================================================== */
 .hero{
   position:relative;
   text-align:center;
-  padding:6px 6px 20px;
 }
 
-/* Imagen principal */
 .hero-img{
   width:100%;
   height:420px;
   object-fit:cover;
   border-radius:8px;
-  filter:brightness(.85);
-  display:block;
+  filter:brightness(.82);
 }
 
-/* ------------------------------
-   VERSÍCULO (parte inferior izquierda)
--------------------------------- */
+/* Versículo — esquina inferior izquierda */
 .verse{
   position:absolute;
-  bottom:18px;
-  left:18px;
+  bottom:22px;
+  left:22px;
+  z-index:5;
   text-align:left;
-  color:#ffffff;     /* blanco */
-  text-shadow:0 2px 3px rgba(0,0,0,0.45);
+  color:#ffffff;
+  text-shadow:0 2px 4px rgba(0,0,0,0.55);
+  line-height:1.25;
   max-width:70%;
-  line-height:1.3;
 }
 
 .verse-text{
-  font-family:"Merriweather", serif;
   font-style:italic;
-  font-size:18px;
   margin:0;
+  font-size:17px;
 }
 
 .verse-ref{
-  font-size:14px;
   margin:6px 0 0;
-  opacity:.9;
+  font-size:14px;
+  opacity:.95;
 }
 
-@media(max-width:600px){
-  .verse{
-    bottom:12px;
-    left:12px;
-    max-width:80%;
-  }
-  .verse-text{ font-size:14px; }
-  .verse-ref{ font-size:11px; }
+/* Semáforo */
+.semaforo-wrap{
+  margin-top:12px;
 }
 
-/* =========================================================
-   ICONO SEMÁFORO
-========================================================= */
-
-.semaforo-wrap{ margin-top:12px; }
 .semaforo{
-  width:120px;       /* duplicado del tamaño original */
+  width:110px;      /* tamaño aumentado x2 */
   height:auto;
 }
 
-/* =========================================================
-   NOMBRES EN TEXTO CURVO
-========================================================= */
 
+/* ==========================================================
+   TEXTO EN ARCO
+========================================================== */
 .names-wrap{
-  margin-top:-15px;
-  margin-bottom:-12px;
+  margin-top:5px;
+  overflow:visible;
 }
 
 .arc-svg{
   width:100%;
-  height:180px;     /* más alto para crecer */
+  height:180px;
 }
 
-/* Tamaño de tipografía ajustado para ocupar el ancho */
 .arc-text{
-  font-family:'Great Vibes', cursive;
-  font-size:48px;
+  font-family:"Great Vibes", cursive;
   fill:var(--accent);
+  font-size:12vw;         /* AJUSTE AUTOMÁTICO AL ANCHO */
 }
 
-/* =========================================================
-   CARRO (full width proporcional)
-========================================================= */
 
-.carro-wrap{ margin-top:10px; }
+/* ==========================================================
+   CARRO
+========================================================== */
+.carro-wrap{
+  margin-top:0;
+}
 
 .carro{
   width:100%;
-  height:auto;       /* mantiene proporción */
-  max-height:240px;
+  height:auto;
+  max-height:none;
   object-fit:contain;
 }
 
-/* =========================================================
-   CONTROLES DE AUDIO
-========================================================= */
 
+/* ==========================================================
+   AUDIO
+========================================================== */
 .audio-controls{
   display:flex;
-  gap:8px;
   justify-content:center;
-  margin-top:12px;
+  gap:10px;
+  margin-top:14px;
 }
 
 .btn{
   background:var(--accent);
-  color:#fff;
+  color:white;
   border:none;
-  padding:10px 14px;
+  padding:10px 15px;
   border-radius:8px;
   cursor:pointer;
   font-weight:600;
 }
 
 .btn.small{
-  padding:8px 12px;
   font-size:14px;
+  padding:8px 12px;
 }
 
-.btn.muted{ background:#555; }
+.btn.muted{
+  background:#555;
+}
 
-/* =========================================================
-   CUENTA REGRESIVA
-========================================================= */
 
+/* ==========================================================
+   COUNTDOWN
+========================================================== */
 .countdown{
-  background:rgba(255,255,255,0.6);
-  padding:20px;
+  background:rgba(255,255,255,0.65);
+  padding:18px;
+  margin-top:20px;
   border-radius:8px;
-  margin-top:18px;
   text-align:center;
 }
 
 .timer{
-  font-size:34px;
+  font-size:28px;
   color:var(--accent);
   font-weight:700;
-  margin:12px 0;
+  margin-bottom:12px;
 }
 
-/* Texto arriba del calendario */
-.countdown-msg{
-  font-family:"Merriweather";
-  font-size:17px;
-  margin:10px 0 4px;
+/* Texto adicional */
+.texto-union{
+  margin-top:5px;
+  font-size:18px;
 }
 
-.countdown-month{
-  font-family:"Great Vibes";
+.diciembre{
+  font-family:"Great Vibes", cursive;
   font-size:42px;
   margin:0;
 }
 
-.countdown-year{
-  font-family:"Merriweather";
-  font-size:20px;
-  margin-top:-4px;
+.anio-2025{
+  font-size:22px;
   text-align:right;
-  padding-right:14px;
+  margin-top:-10px;
+  margin-bottom:12px;
 }
 
-/* Imagen calendario ajustada */
+/* Calendario ajustado */
 .cal-img img{
   width:100%;
   max-width:380px;
-  display:block;
   height:auto;
+  display:block;
   margin:0 auto;
 }
 
-/* Bandera (más pequeña que el calendario) */
-.bandera-img{
-  width:160px;
-  height:auto;
-  display:block;
-  margin:18px auto 0 auto;
-  opacity:0.95;
+/* Bandera pequeña */
+.bandera{
+  width:35px;   /* 4× más pequeña */
+  position:absolute;
+  right:15px;
+  margin-top:10px;
 }
 
-/* =========================================================
-   DETALLES (fondo vino)
-========================================================= */
 
+/* ==========================================================
+   DETALLES – CEREMONIA Y RECEPCIÓN
+========================================================== */
 .details{
   background:var(--vino);
-  color:white;
+  margin-top:20px;
   padding:20px;
-  border-radius:10px;
-  margin-top:18px;
+  border-radius:8px;
+  color:white;
+}
+
+.section-head{
   text-align:center;
 }
 
 .head-img{
-  height:70px;
-  object-fit:contain;
+  height:58px;
+  margin-bottom:10px;
+}
+
+.detail-block{
+  text-align:center;
+  margin-top:12px;
 }
 
 .small-icon{
   height:36px;
-  vertical-align:middle;
-  margin-right:8px;
+  margin-bottom:8px;
 }
 
-/* =========================================================
-   SECCIÓN MENÚ
-========================================================= */
 
+/* ==========================================================
+   MENÚ
+========================================================== */
 .menu-section{
-  background:rgba(255,255,255,0.7);
-  margin-top:34px;
-  padding:20px 12px 70px;  /* extra espacio para las leyendas */
+  background:rgba(255,255,255,0.75);
+  margin-top:25px;
+  padding:25px 15px 80px 15px; /* espacio por leyenda */
   border-radius:8px;
   position:relative;
 }
 
-.menu-container{
-  text-align:center;
-  position:relative;
-}
-
 .menu-title{
-  font-family:"Great Vibes";
-  font-size:46px;
+  text-align:center;
+  font-family:"Great Vibes", cursive;
+  font-size:50px;
   color:#7a1e1e;
-  margin-bottom:28px;
+  margin-bottom:25px;
 }
 
-/* Platillos */
 .menu-item{
   margin-bottom:32px;
+  text-align:center;
 }
 
 .menu-item-title{
-  font-weight:bold;
-  font-family:"Merriweather";
-  color:#7a1e1e;
   font-size:22px;
+  font-weight:bold;
 }
 
 .menu-item p{
-  font-size:16px;
-  font-family:"Merriweather";
+  font-size:17px;
 }
 
-/* Iconos dentro del menú */
 .menu-icon{
-  width:36px;
+  width:35px;
+  margin-top:10px;
   display:block;
-  margin:10px auto;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* Imagen pareja al fondo derecha */
-.menu-pareja{
-  position:absolute;
-  right:10px;
-  bottom:10px;
-  width:120px;
-  opacity:0.9;
-  z-index:0;
-}
-
-/* Leyenda al pie */
+/* Leyenda al fondo */
 .menu-legends{
   position:absolute;
   left:18px;
-  bottom:10px;
+  bottom:12px;
   display:flex;
   gap:25px;
-  z-index:2;
+}
+
+.menu-legends div{
+  text-align:center;
 }
 
 .menu-legends img{
-  width:34px;
-  height:auto;
+  width:32px;
 }
 
 .menu-legends span{
-  display:block;
-  font-size:13px;
-  font-family:"Merriweather";
-  margin-top:3px;
+  font-size:12px;
 }
 
-/* =========================================================
-   RSVP
-========================================================= */
+/* Pareja decorativa abajo */
+.menu-pareja{
+  position:absolute;
+  right:12px;
+  bottom:0;
+  width:95px;
+  opacity:0.95;
+}
 
+
+/* ==========================================================
+   RSVP
+========================================================== */
 .rsvp{
-  background:rgba(255,255,255,0.6);
-  padding:20px;
+  background:rgba(255,255,255,0.65);
+  padding:18px;
   border-radius:8px;
   margin-top:20px;
 }
 
 label{
   display:block;
-  margin:10px 0;
+  margin-top:10px;
 }
 
 input, select{
   width:100%;
   padding:10px;
   border-radius:6px;
-  border:1px solid #e2dcd0;
+  border:1px solid #d8d8d8;
+  margin-top:6px;
 }
 
-/* =========================================================
-   DRESS CODE
-========================================================= */
 
-.dresscode{
-  background:rgba(255,255,255,0.6);
-  padding:20px;
-  border-radius:8px;
-  margin-top:20px;
-}
-
-/* =========================================================
-   FOOTER (imagen inclinada)
-========================================================= */
-
+/* ==========================================================
+   FOOTER
+========================================================== */
 footer.credits{
+  margin-top:20px;
   display:flex;
-  gap:16px;
-  align-items:center;
   justify-content:space-between;
-  margin-top:18px;
-  background:transparent;
+  align-items:center;
+}
+
+.footer-left{
+  flex:1;
 }
 
 .footer-text{
@@ -377,12 +347,12 @@ footer.credits{
   line-height:1.3;
 }
 
+/* Imagen dos.png girada */
 .dos-img{
-  max-width:120px;
-  height:auto;
-  transform:rotate(50deg); /* inclinación solicitada */
+  width:130px;
+  transform:rotate(50deg);
 }
 
-@media(max-width:600px){
-  .footer-right{ display:none; }
-}
+
+/* ==========================================================
+   RESPONSI
