@@ -1,168 +1,190 @@
-/* script.js - Invitación Jaret & Diana */
+/* =========================================================
+   SCRIPT.JS - Invitación Jaret & Diana
+   ========================================================= */
 
-// ======= CONFIG ========
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzgK6hNBU0NVitQ1oKWaKRh1_R7ewIdFLsJuSLyA8iqS6vx588oUxDGTUZsqK1zm-XxJw/exec'; // <<--- PONÉ AQUI la URL de Apps Script (termina en /exec)
-const TARGET_DATE = new Date('2025-12-22T15:00:00'); // 22 dic 2025 15:00 local
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
 
-// ======= AUDIO / PLAYBACK (Opción C) ========
-const audio = document.getElementById('bgAudio');
-const tryPlayBtn = document.getElementById('tryPlayBtn');
-const muteBtn = document.getElementById('muteBtn');
-let attemptedAuto = false;
+// URL de tu Apps Script (modo /exec)
+const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzgK6hNBU0NVitQ1oKWaKRh1_R7ewIdFLsJuSLyA8iqS6vx588oUxDGTUZsqK1zm-XxJw/exec";
 
-async function attemptAutoplay(){
-  if(attemptedAuto) return;
-  attemptedAuto = true;
-  try {
-    await audio.play();
-    tryPlayBtn.textContent = '⏸ Pausar música';
-  } catch(err){
-    // autoplay blocked, show button (already visible)
-    tryPlayBtn.textContent = '🔊 Reproducir música';
+// Fecha del evento
+const TARGET_DATE = new Date("2025-12-22T15:00:00");
+
+
+/* =========================================================
+   AUDIO — COMPATIBLE CON CELULARES ANDROID
+========================================================= */
+
+const audio = document.getElementById("bgAudio");
+const tryPlayBtn = document.getElementById("tryPlayBtn");
+const muteBtn = document.getElementById("muteBtn");
+
+// Intento de autoplay en móviles cuando el usuario toca la pantalla
+document.addEventListener("touchstart", () => {
+  if (audio.paused) {
+    audio.play().catch(()=>{});
   }
-}
+}, { once:true });
 
-tryPlayBtn.addEventListener('click', async () => {
+// Botón reproducir / pausar
+tryPlayBtn.addEventListener("click", async () => {
   if (audio.paused) {
     await audio.play();
-    tryPlayBtn.textContent = '⏸ Pausar música';
+    tryPlayBtn.textContent = "⏸ Pausar música";
   } else {
     audio.pause();
-    tryPlayBtn.textContent = '🔊 Reproducir música';
+    tryPlayBtn.textContent = "🔊 Reproducir música";
   }
 });
 
-muteBtn.addEventListener('click', () => {
+// Botón mute
+muteBtn.addEventListener("click", () => {
   audio.muted = !audio.muted;
-  muteBtn.textContent = audio.muted ? '🔇 Silenciar' : '🔈 Sonido';
+  muteBtn.textContent = audio.muted ? "🔇 Silenciado" : "🔈 Sonido";
 });
 
-// Try autoplay after a small delay
-setTimeout(attemptAutoplay, 500);
 
-// ======= COUNTDOWN =======
+/* =========================================================
+   CUENTA REGRESIVA (CON SEGUNDOS)
+========================================================= */
+
 function updateCountdown(){
   const now = new Date();
   let diff = TARGET_DATE - now;
   const el = document.getElementById('countdownTimer');
+
   if (diff <= 0) {
-    el.textContent = '¡Ya es el día!';
+    el.textContent = "¡Hoy es el gran día!";
     return;
   }
-  const days = Math.floor(diff / (1000*60*60*24));
-  diff -= days*(1000*60*60*24);
-  const hours = Math.floor(diff / (1000*60*60));
-  diff -= hours*(1000*60*60);
-  const minutes = Math.floor(diff / (1000*60));
-  diff -= minutes*(1000*60);
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  diff -= days * (1000 * 60 * 60 * 24);
+
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  diff -= hours * (1000 * 60 * 60);
+
+  const minutes = Math.floor(diff / (1000 * 60));
+  diff -= minutes * (1000 * 60);
+
   const seconds = Math.floor(diff / 1000);
-  el.textContent = `${days}d ${hours}h ${minutes}m`;
+
+  el.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ======= CALENDAR: apertura Google Calendar / descarga ICS =======
+
+/* =========================================================
+   GOOGLE CALENDAR / DESCARGA ICS
+========================================================= */
+
+// Formato UTC para .ics
 function formatDateICS(d){
-  const pad = n => n<10 ? '0'+n : n;
-  // Return format YYYYMMDDTHHMMSSZ (UTC)
-  const utcY = d.getUTCFullYear();
-  const utcM = pad(d.getUTCMonth()+1);
-  const utcD = pad(d.getUTCDate());
-  const utcH = pad(d.getUTCHours());
-  const utcMin = pad(d.getUTCMinutes());
-  const utcS = pad(d.getUTCSeconds());
-  return `${utcY}${utcM}${utcD}T${utcH}${utcMin}${utcS}Z`;
+  const pad = n => n < 10 ? "0" + n : n;
+
+  return (
+    d.getUTCFullYear() +
+    pad(d.getUTCMonth()+1) +
+    pad(d.getUTCDate()) +
+    "T" +
+    pad(d.getUTCHours()) +
+    pad(d.getUTCMinutes()) +
+    pad(d.getUTCSeconds()) +
+    "Z"
+  );
 }
 
-// Add-to-GoogleCalendar link
+// Datos del evento
 const eventStart = new Date(TARGET_DATE);
-const eventEnd = new Date(TARGET_DATE.getTime() + 3*60*60*1000); // 3 hours duration
-const gLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Boda - Jaret & Diana')}&dates=${formatDateICS(eventStart)}/${formatDateICS(eventEnd)}&details=${encodeURIComponent('Ceremonia y recepción')}&location=${encodeURIComponent('Pan & Paz - Panadería Francesa, León, Nicaragua')}`;
+const eventEnd = new Date(TARGET_DATE.getTime() + 3 * 60 * 60 * 1000);
 
-// Allow quick .ics download (for Apple/Outlook)
+// Enlace a Google Calendar
+const gLink =
+  "https://www.google.com/calendar/render?action=TEMPLATE" +
+  "&text=" + encodeURIComponent("Boda — Jaret & Diana") +
+  "&dates=" + formatDateICS(eventStart) + "/" + formatDateICS(eventEnd) +
+  "&details=" + encodeURIComponent("Ceremonia y recepción") +
+  "&location=" + encodeURIComponent("Pan & Paz — Panadería Francesa, León, Nicaragua");
+
+// Crear archivo .ics
 function createICS(){
-  const dtstamp = formatDateICS(new Date());
-  const dtstart = formatDateICS(eventStart);
-  const dtend = formatDateICS(eventEnd);
-  const ics = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//JaretDiana//Invitacion//ES',
-    'BEGIN:VEVENT',
-    `UID:${Date.now()}@jaretydiana`,
-    `DTSTAMP:${dtstamp}`,
-    `DTSTART:${dtstart}`,
-    `DTEND:${dtend}`,
-    `SUMMARY:${'Boda - Jaret & Diana'}`,
-    `DESCRIPTION:${'Ceremonia y recepción - Pan & Paz - Panadería Francesa'}`,
-    `LOCATION:${'Pan & Paz - Panadería Francesa, León, Nicaragua'}`,
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ].join('\\r\\n');
-  const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  return url;
+  const ics =
+    "BEGIN:VCALENDAR\r\n" +
+    "VERSION:2.0\r\n" +
+    "BEGIN:VEVENT\r\n" +
+    "DTSTART:" + formatDateICS(eventStart) + "\r\n" +
+    "DTEND:" + formatDateICS(eventEnd) + "\r\n" +
+    "SUMMARY:Boda — Jaret & Diana\r\n" +
+    "LOCATION:Pan & Paz — Panadería Francesa, León, Nicaragua\r\n" +
+    "END:VEVENT\r\n" +
+    "END:VCALENDAR";
+
+  const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+  return URL.createObjectURL(blob);
 }
-// replace calendario image link to open GCAL / ICS
-document.addEventListener('DOMContentLoaded', () => {
-  // set maps link target already set in HTML
-  const calImg = document.querySelector('.cal-img img');
+
+// Conectar .ics + click en calendario
+document.addEventListener("DOMContentLoaded", () => {
+  const calImg = document.querySelector(".cal-img img");
   if (calImg){
-    calImg.style.cursor = 'pointer';
-    calImg.addEventListener('click', () => {
-      // try open Google Calendar
-      window.open(gLink, '_blank');
-    });
+    calImg.style.cursor = "pointer";
+    calImg.addEventListener("click", () => window.open(gLink, "_blank"));
   }
 
-  // create an invisible ICS download link under the calendar image (optional)
-  const icsUrl = createICS();
-  const icsA = document.createElement('a');
-  icsA.href = icsUrl;
-  icsA.download = 'Boda_Jaret_Diana.ics';
-  icsA.textContent = 'Agregar a calendario (archivo .ics)';
-  icsA.style.display = 'block';
-  icsA.style.marginTop = '8px';
-  const calSection = document.querySelector('.countdown');
-  if (calSection) calSection.appendChild(icsA);
+  const icsA = document.createElement("a");
+  icsA.href = createICS();
+  icsA.download = "Boda_Jaret_Diana.ics";
+  icsA.textContent = "Agregar a calendario (.ics)";
+  icsA.style.display = "block";
+  icsA.style.marginTop = "10px";
+
+  document.querySelector(".countdown").appendChild(icsA);
 });
 
-// ======= RSVP FORM ========
-const form = document.getElementById('rsvpForm');
-const formMsg = document.getElementById('formMsg');
 
-form.addEventListener('submit', async (e) => {
+/* =========================================================
+   RSVP — SIN HEADERS (evita CORS)
+========================================================= */
+
+const form = document.getElementById("rsvpForm");
+const formMsg = document.getElementById("formMsg");
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  formMsg.style.color = 'black';
-  formMsg.textContent = 'Enviando...';
+  formMsg.textContent = "Enviando...";
+  formMsg.style.color = "black";
 
-  // collect data
   const data = new FormData(form);
   const payload = {
-    timestamp: new Date().toISOString(),
-    name: data.get('name') || '',
-    attend: data.get('attend') || '',
-    platillo: data.get('platillo') || '',
-    bebida: data.get('bebida') || ''
+    name: data.get("name"),
+    attend: data.get("attend"),
+    platillo: data.get("platillo"),
+    bebida: data.get("bebida")
   };
 
   try {
     const resp = await fetch(GAS_ENDPOINT, {
-      method: 'POST',
-     // headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(payload)
+      method: "POST",
+      body: JSON.stringify(payload) // sin headers
     });
+
     const j = await resp.json();
-    if (j.result === 'success') {
-      formMsg.style.color = 'green';
-      formMsg.textContent = 'Confirmación recibida. ¡Gracias!';
+
+    if (j.result === "success") {
+      formMsg.style.color = "green";
+      formMsg.textContent = "Confirmación recibida. ¡Gracias!";
       form.reset();
     } else {
-      formMsg.style.color = 'red';
-      formMsg.textContent = 'Error en el servidor, inténtalo más tarde.';
+      formMsg.style.color = "red";
+      formMsg.textContent = "Error en el servidor.";
     }
-  } catch(err){
-    formMsg.style.color = 'red';
-    formMsg.textContent = 'Error de red: ' + err.message;
+
+  } catch(error){
+    formMsg.style.color = "red";
+    formMsg.textContent = "Error de red: " + error.message;
   }
 });
