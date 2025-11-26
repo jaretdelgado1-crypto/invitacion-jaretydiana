@@ -1,27 +1,23 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jaret & Diana — Invitación</title>
 
-  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="assets/css/styles.css">
-  <meta name="description" content="Invitación de boda - Jaret & Diana">
 </head>
 
 <body>
   <main class="container">
 
-    <!-- ===================== HERO / PORTADA ===================== -->
+    <!-- ===================== HERO ===================== -->
     <header class="hero">
-      <div class="paper-overlay"></div>
+      <img src="assets/img/portada.jpeg" class="hero-img">
 
-      <img src="assets/img/portada.jpeg" alt="Portada" class="hero-img">
-
-      <!-- Versículo (abajo izquierda) -->
+      <!-- Versículo - posición correcta -->
       <div class="verse">
         <p class="verse-text">
           "Por encima de todo, vístanse de<br>
@@ -32,10 +28,10 @@
 
       <!-- Semáforo -->
       <div class="semaforo-wrap">
-        <img src="assets/img/semaforo.png" alt="semaforo" class="semaforo">
+        <img src="assets/img/semaforo.png" class="semaforo">
       </div>
 
-      <!-- Texto curvo -->
+      <!-- Texto curvo ajustado a ancho -->
       <div class="names-wrap">
         <svg viewBox="0 0 900 220" class="arc-svg">
           <defs>
@@ -57,9 +53,9 @@
         </svg>
       </div>
 
-      <!-- Carro ajustado a ancho completo -->
+      <!-- Carro ancho completo -->
       <div class="carro-wrap">
-        <img src="assets/img/carro.png" alt="carro" class="carro">
+        <img src="assets/img/carro.png" class="carro">
       </div>
 
       <!-- Audio -->
@@ -75,93 +71,103 @@
       <h2 class="merri">Faltan:</h2>
       <div id="countdownTimer" class="timer">--d --h --m --s</div>
 
-      <!-- Texto especial arriba del calendario -->
-      <p class="merri" style="font-size:18px; margin-top:10px;">
-        Queremos compartir contigo<br>la felicidad de nuestra unión
-      </p>
+      <p class="merri texto-union">Queremos compartir contigo<br>la felicidad de nuestra unión</p>
 
-      <p style="margin:0; font-family:'Great Vibes', cursive; font-size:36px;">Diciembre</p>
-      <p style="margin:0; text-align:right; font-family:'Merriweather'; font-size:18px; padding-right:12px;">
-        2025
-      </p>
+      <p class="diciembre">Diciembre</p>
+      <p class="anio-2025">2025</p>
 
-      <!-- Calendario -->
       <div class="cal-img">
-        <img src="assets/img/calendario.png" alt="calendario">
+        <img src="assets/img/calendario.png">
       </div>
 
-      <!-- Bandera (pequeña, esquina inferior derecha del calendario) -->
-      <img src="assets/img/bandera.png" alt="bandera" class="bandera-calendario">
+      <img src="assets/img/bandera.png" class="bandera">
     </section>
 
     <!-- ===================== DETALLES ===================== -->
     <section class="details">
 
+      <div class="section-head">
+        <img src="assets/img/marriage.png" class="head-img">
+      </div>
+
       <div class="detail-block ceremony-block">
         <h3 class="merri">Ceremonia Religiosa</h3>
-        <p class="merri">Hora: 03:00 PM</p>
+        <p class="merri small">Hora: 03:00 PM</p>
       </div>
 
-      <div class="detail-block ceremony-block">
+      <div class="detail-block">
+        <img src="assets/img/croissant.png" class="small-icon">
         <h3 class="merri">Lugar de recepción</h3>
         <p class="merri">Pan &amp; Paz - Panadería Francesa<br>León, Nicaragua</p>
-        <p>
-          <a class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">
-            Ver ubicación
-          </a>
-        </p>
+        <p><a class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank">Ver ubicación</a></p>
       </div>
+
     </section>
 
-    <!-- ===================== MENÚ ===================== -->
+    <!-- ===================== MENU ===================== -->
     <section class="menu-section">
-      <div class="menu-container">
 
-        <h2 class="menu-title">Menú</h2>
+      <h2 class="menu-title">Menú</h2>
 
-        <!-- Platillos -->
-        <div class="menu-item">
-          <h3 class="menu-item-title">Baguette Veggie</h3>
-          <p>Verduras asadas con salsa<br>de marañón y hierbas</p>
-        </div>
-
-        <div class="menu-item">
-          <h3 class="menu-item-title">Panini Gourmet Camembert</h3>
-          <p>Cremoso camembert, manzana,<br>espinaca y mostaza-miel</p>
-        </div>
-
-        <div class="menu-item">
-          <h3 class="menu-item-title">Crema y Sándwich</h3>
-          <p>
-            Crema especial con sándwich a elegir:<br>
-            Verduras y pesto — Pollo — Jamón & Queso
-          </p>
-        </div>
-
-        <div class="menu-item">
-          <h3 class="menu-item-title">Bebidas</h3>
-          <p>
-            Agua gasificada con frutas:<br>
-            Fresa & Pepino — Arándano & Limón — Limonada de jengibre
-          </p>
-        </div>
-
-        <!-- Leyenda vegetariano / vegano -->
-        <div class="menu-legends">
-          <div>
-            <img src="assets/img/icono_vegetariano.jpeg" alt="Vegetariano">
-            <span>Vegetariano</span>
-          </div>
-
-          <div>
-            <img src="assets/img/icono_vegano.jpeg" alt="Vegano">
-            <span>Vegano</span>
-          </div>
-        </div>
-
-        <!-- Imagen pareja abajo derecha -->
-        <img src="assets/img/menu_pareja.jpeg" alt="pareja" class="menu-pareja">
+      <!-- Baguette veggie -->
+      <div class="menu-item">
+        <h3 class="menu-item-title">Baguette Veggie</h3>
+        <p>
+          Verduras asadas con salsa<br>
+          de marañón y hierbas
+        </p>
+        <img src="assets/img/icono_vegetariano.jpeg" class="menu-icon">
       </div>
+
+      <!-- Panini gourmet -->
+      <div class="menu-item">
+        <h3 class="menu-item-title">Panini Gourmet<br>Camembert</h3>
+        <p>
+          Cremoso queso camembert,<br>
+          manzana, espinaca fresca,<br>
+          mostaza-miel aderezo
+        </p>
+        <img src="assets/img/icono_vegano.jpeg" class="menu-icon">
+      </div>
+
+      <!-- Crema y sandwich -->
+      <div class="menu-item">
+        <h3 class="menu-item-title">Crema y Sándwich</h3>
+        <p>
+          Crema especial con su opción de sándwich:<br>
+          • Verduras y pesto<br>
+          • Pollo o jamón y queso<br>
+          (opción de pan blanco o integral)
+        </p>
+      </div>
+
+      <!-- Bebidas -->
+      <div class="menu-item">
+        <h3 class="menu-item-title">Bebidas</h3>
+        <p>
+          Refrescante agua con gas, con<br>
+          frutas & hierbas<br><br>
+          Fresa & Pepino<br>
+          Arándano & Limón<br>
+          Limonada de jengibre
+        </p>
+      </div>
+
+      <!-- Leyenda abajo -->
+      <div class="menu-legends">
+        <div>
+          <img src="assets/img/icono_vegetariano.jpeg">
+          <span>Vegetariano</span>
+        </div>
+
+        <div>
+          <img src="assets/img/icono_vegano.jpeg">
+          <span>Vegano</span>
+        </div>
+      </div>
+
+      <!-- Pareja al fondo derecha -->
+      <img src="assets/img/menu_pareja.jpeg" class="menu-pareja">
     </section>
 
     <!-- ===================== RSVP ===================== -->
@@ -174,31 +180,31 @@
         <label>Asistirá?
           <select name="attend" required>
             <option value="">Seleccionar</option>
-            <option value="Sí">Sí</option>
-            <option value="No">No</option>
+            <option>Sí</option>
+            <option>No</option>
           </select>
         </label>
 
         <label>Platillo
           <select name="platillo" required>
             <option value="">Seleccionar</option>
-            <option value="Baguette Veggie">Baguette Veggie</option>
-            <option value="Panini Gourmet Camembert">Panini Gourmet Camembert</option>
-            <option value="Crema Sandwich">Crema Sandwich</option>
+            <option>Baguette Veggie</option>
+            <option>Panini Gourmet Camembert</option>
+            <option>Crema Sandwich</option>
           </select>
         </label>
 
         <label>Bebida
           <select name="bebida" required>
             <option value="">Seleccionar</option>
-            <option value="Fresa &amp; Pepino">Fresa &amp; Pepino</option>
-            <option value="Arándano &amp; Limón">Arándano &amp; Limón</option>
-            <option value="Limonada de jengibre">Limonada de jengibre</option>
+            <option>Fresa & Pepino</option>
+            <option>Arándano & Limón</option>
+            <option>Limonada de jengibre</option>
           </select>
         </label>
 
-        <button type="submit" class="btn">Enviar RSVP</button>
-        <div id="formMsg" role="status"></div>
+        <button class="btn" type="submit">Enviar RSVP</button>
+        <div id="formMsg"></div>
       </form>
     </section>
 
@@ -213,7 +219,7 @@
       </div>
 
       <div class="footer-right">
-        <img src="assets/img/dos.png" alt="dos" class="dos-img">
+        <img src="assets/img/dos.png" class="dos-img">
       </div>
     </footer>
 
