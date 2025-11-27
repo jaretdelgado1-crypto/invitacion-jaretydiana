@@ -176,8 +176,8 @@ footer.credits{display:flex;gap:12px;align-items:center;justify-content:space-be
 @media(max-width:600px){
   .hero-img{height:520px}
   .verse{bottom:16px;left:12px}
-  .arc-text{font-size:18vw}
-  .arc-line2{font-size:15vw}
+  .arc-text{font-size:21vw}
+  .arc-line2{font-size:18vw}
   .menu-title{font-size:36px;margin-top:44px}
   .bandera{right:6px;top:-8px;width:30px}
   .dos-img{width:100px}
