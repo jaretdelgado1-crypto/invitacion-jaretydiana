@@ -69,7 +69,7 @@ body{
 }*/
 
 /* semaforo aumentado */
-.semaforo{width:160px;height:auto;margin-top:12px;z-index:30}
+.semaforo{width:200px;height:auto;margin-top:12px;z-index:30}
 
 /* ARC TEXT (Opción B: grande pero elegante) */
 .names-wrap{margin-top:2px}
