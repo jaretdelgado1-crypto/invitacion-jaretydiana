@@ -121,16 +121,30 @@ header .timer {
   font-weight: 700;
   margin-bottom: 30px; /* Espacio para separar del siguiente bloque */
 }
-.countdown{background:rgba(255,255,255,0.85);padding:18px 18px 0 18px;border-radius:8px;margin-top:16px;text-align:center}
+.countdown{background:rgba(255,255,255,0.85);padding:18px 18px 50px 18px;border-radius:8px;margin-top:16px;text-align:center}
 .timer{font-size:30px;color:var(--accent);font-weight:700;margin-top:8px}
 .texto-union{font-size:17px;margin:8px 0 0 0}
 .diciembre{font-family:"Great Vibes";font-size:42px;margin:0}
 .anio-2025{font-size:18px;text-align:right;margin-top:-6px}
 
 /* calendario y bandera */
+/* calendario y bandera */
 .cal-img img{width:100%;max-width:380px;display:block;margin:-6px auto;height:auto}
-.bandera-wrap{position:relative;width:100%;max-width:420px;margin:0 auto}
-.bandera{width:35px;position:absolute;right:8px;top:-6px}
+.bandera-wrap{
+  position:relative;
+  width:100%;
+  max-width:420px;
+  margin:0 auto;
+  min-height: 45px; /* NUEVO: Asegura un espacio mínimo para la bandera */
+}
+.bandera{
+  width:35px;
+  position:absolute;
+  right:8px;
+  bottom:5px; /* CAMBIO CLAVE: Posicionado desde abajo, dentro de su contenedor */
+  top: auto; /* Desactivar top */
+  z-index: 2; /* Asegurar que esté encima si hay algo */
+}
 
 
 /* DETAILS (fondo vino) */
@@ -206,7 +220,7 @@ footer.credits{display:flex;gap:12px;align-items:center;justify-content:space-be
   .arc-text{font-size:22vw}
   .arc-line2{font-size:19vw}
   .menu-title{font-size:36px;margin-top:44px}
-  .bandera{right:6px;top:-8px;width:30px}
+  .bandera{right:6px;bottom:5px;width:30px}
   .dos-img{width:100px}
    .carro-wrap{margin-top:-50px;}
 }
