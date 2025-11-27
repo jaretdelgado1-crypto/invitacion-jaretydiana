@@ -73,11 +73,11 @@ body{
 
 /* ARC TEXT (Opción B: grande pero elegante) */
 .names-wrap{margin-top:2px}
-.arc-svg{width:100%;height:210px}
+.arc-svg{width:100%;height:240px}
 .arc-text{font-family:"Great Vibes",cursive;
           fill:var(--accent);
           font-size:9vw;/* responsive */
-         white-space:pre-line /*Nuevo: Permite que los <br> y los espacios se manejen con más precisión */
+         /*white-space:pre-line /*Nuevo: Permite que los <br> y los espacios se manejen con más precisión */
          }
 
 /* line2 (Nos Casamos) ligeramente más pequeño */
@@ -217,7 +217,7 @@ footer.credits{display:flex;gap:12px;align-items:center;justify-content:space-be
 @media(max-width:600px){
   .hero-img{height:520px}
   .verse{bottom:16px;left:12px}
-  .arc-text{font-size:22vw}
+  .arc-text{font-size:21vw}
   .arc-line2{font-size:19vw}
   .menu-title{font-size:36px;margin-top:44px}
   .bandera{right:6px;bottom:5px;width:30px}
