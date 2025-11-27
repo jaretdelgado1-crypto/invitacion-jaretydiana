@@ -93,7 +93,7 @@ body{
   border-radius:8px;
   position:relative;
   /* fondo lazo (ruta desde CSS a img) */
-  background-image: url("../img/menu_lazo.png");
+  background-image: url("../img/menu_lazo.jpeg");
   background-repeat:no-repeat;
   background-position: center top;
   background-size:contain;
