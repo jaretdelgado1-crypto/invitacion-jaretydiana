@@ -80,7 +80,7 @@ body{
 .arc-line2{font-size:7.2vw}
 
 /* CARRO */
-.carro-wrap{margin-top:6px;z-index:10}
+.carro-wrap{margin-top:-10px;z-index:10}  /*el margin top me sirve para moverlo de arriba abajo*/
 .carro{width:100%;height:auto;object-fit:contain;display:block}
 
 /* AUDIO botones con imágenes */
@@ -101,14 +101,30 @@ body{
 .btn-icon{width:22px;height:auto;display:block}
 
 /* COUNTDOWN */
-.countdown{background:rgba(255,255,255,0.7);padding:18px;border-radius:8px;margin-top:16px;text-align:center}
+/* Estilo para el título del contador movido */
+#countdownTitle {
+  font-size: 18px; 
+  margin-top: 20px; /* Separación de los botones de música */
+  margin-bottom: 5px;
+  color: #222;
+  font-weight: 400;
+}
+
+/* Contador principal movido */
+header .timer {
+  font-size: 28px; 
+  color: var(--vino); /* Usamos color vino para destacar */
+  font-weight: 700;
+  margin-bottom: 20px; /* Espacio para separar del siguiente bloque */
+}
+.countdown{background:rgba(255,255,255,0.85);padding:18px 18px 0 18px;border-radius:8px;margin-top:16px;text-align:center}
 .timer{font-size:30px;color:var(--accent);font-weight:700;margin-top:8px}
-.texto-union{font-size:17px;margin:10px 0}
+.texto-union{font-size:17px;margin:8px 0 0 0}
 .diciembre{font-family:"Great Vibes";font-size:42px;margin:0}
 .anio-2025{font-size:18px;text-align:right;margin-top:-6px}
 
 /* calendario y bandera */
-.cal-img img{width:100%;max-width:380px;display:block;margin:8px auto;height:auto}
+.cal-img img{width:100%;max-width:380px;display:block;margin:0px auto;height:auto}
 .bandera-wrap{position:relative;width:100%;max-width:420px;margin:0 auto}
 .bandera{width:35px;position:absolute;right:8px;top:-6px}
 
@@ -171,6 +187,15 @@ input,select{width:100%;padding:10px;border-radius:6px;border:1px solid #e6e0d6}
 footer.credits{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:18px}
 .footer-text{font-size:15px;line-height:1.3}
 .dos-img{width:130px;transform:rotate(50deg);display:block}
+
+/* Título para el RSVP */
+.rsvp .menu-title {
+    font-family: "Great Vibes";
+    font-size: 38px;
+    color: #7a1e1e;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 /* Responsive */
 @media(max-width:600px){
