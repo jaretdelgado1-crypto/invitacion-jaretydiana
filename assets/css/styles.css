@@ -27,40 +27,38 @@ body{
 }
 
 /* HERO */
-.hero{position:relative;text-align:center;padding:6px 6px 20px}
-.hero-img{width:100%;height:420px;object-fit:cover;border-radius:8px;filter:brightness(.85);display:block}
-.paper-overlay{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;border-radius:8px}
+.hero{position:relative;text-align:center}
+.hero-img{width:100%;height:460px;object-fit:cover;border-radius:8px;filter:brightness(.82);display:block}
 
-/* verse */
+
+/* Verse: forzado encima y en esquina inferior izquierda */
 .verse{
   position:absolute;
-  bottom:18px;
-  left:18px;
-  text-align:left;
-  color:#ffffff;                /* blanco */
-  text-shadow:0 2px 3px rgba(0,0,0,0.45);  /* para que se lea sobre la foto */
-  max-width:70%;               /* no se salga de la imagen */
-  line-height:1.3;
+  bottom:22px;
+  left:22px;
+  z-index:40; /* por encima del carro */
+  color:#fff;
+  text-shadow:0 2px 4px rgba(0,0,0,0.6);
+  max-width:70%;
+  line-height:1.25;
+   text-align: left; /*nuevo, para alinearlo a la derecha*/
 }
-@media (max-width:600px){
+.verse-text{font-size:18px;
+            margin:0;
+            font-style:italic;
+            white-space:pre-line /*Nuevo: Permite que los <br> y los espacios se manejen con más precisión */
+           }
+.verse-ref{font-size:13px;
+           margin-top:6px;
+           opacity:.95
+          }
+@media(max-width:600px){
+  .hero-img{height:520px}
   .verse{
-    bottom: 16px;
-    top: auto;        /* evita que suba */
-    left: 14px;
-    right: auto;
-    max-width: 80%;
-    font-size: 15px;
+    bottom:16px;
+    left:12px;
   }
 }
-
-.verse-text{font-family:"Merriweather", serif;
-	font-style:italic;
-	font-size:16px;
-	margin:0}
-.verse-ref{
-	font-size:13px;
-	margin:6px 0 0;
-	opacity:.9}
 
 /* semaforo aumentado */
 .semaforo{width:110px;height:auto;margin-top:12px;z-index:30}
