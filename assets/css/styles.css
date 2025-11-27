@@ -1,17 +1,16 @@
 /* ==========================================================
-   ESTILOS GENERALES
-========================================================== */
+   STYLES.CSS final (versión para pegar)
+   ========================================================== */
+
 :root{
   --accent:#003865;
   --bg:#f7efe6;
   --muted:#6b6b6b;
-  --paper:#f1eadf;
   --container:980px;
-
-  /* colores especiales */
   --vino:#8A2B2B;
 }
 
+/* cuerpo y contenedor */
 body{
   margin:0;
   font-family:"Merriweather", serif;
@@ -21,338 +20,122 @@ body{
     var(--bg);
   color:#222;
 }
-
 .container{
   max-width:var(--container);
   margin:0 auto;
-  padding:20px;
+  padding:18px;
 }
 
+/* HERO */
+.hero{position:relative;text-align:center}
+.hero-img{width:100%;height:460px;object-fit:cover;border-radius:8px;filter:brightness(.82);display:block}
 
-/* ==========================================================
-   HERO / PORTADA
-========================================================== */
-.hero{
-  position:relative;
-  text-align:center;
-}
-
-.hero-img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  border-radius:8px;
-  filter:brightness(.82);
-}
-
-/* Versículo — esquina inferior izquierda */
+/* Verse: forzado encima y en esquina inferior izquierda */
 .verse{
   position:absolute;
   bottom:22px;
   left:22px;
-  z-index:5;
-  text-align:left;
-  color:#ffffff;
-  text-shadow:0 2px 4px rgba(0,0,0,0.55);
-  line-height:1.25;
+  z-index:40; /* por encima del carro */
+  color:#fff;
+  text-shadow:0 2px 4px rgba(0,0,0,0.6);
   max-width:70%;
+  line-height:1.25;
 }
+.verse-text{font-size:18px;margin:0;font-style:italic}
+.verse-ref{font-size:13px;margin-top:6px;opacity:.95}
 
-.verse-text{
-  font-style:italic;
-  margin:0;
-  font-size:17px;
-}
+/* semaforo aumentado */
+.semaforo{width:110px;height:auto;margin-top:12px;z-index:30}
 
-.verse-ref{
-  margin:6px 0 0;
-  font-size:14px;
-  opacity:.95;
-}
+/* ARC TEXT (Opción B: grande pero elegante) */
+.names-wrap{margin-top:6px}
+.arc-svg{width:100%;height:210px}
+.arc-text{font-family:"Great Vibes",cursive;fill:var(--accent);font-size:9vw;/* responsive */}
 
-/* Semáforo */
-.semaforo-wrap{
-  margin-top:12px;
-}
+/* line2 (Nos Casamos) ligeramente más pequeño */
+.arc-line2{font-size:7.2vw}
 
-.semaforo{
-  width:110px;      /* tamaño aumentado x2 */
-  height:auto;
-}
+/* CARRO */
+.carro-wrap{margin-top:6px;z-index:10}
+.carro{width:100%;height:auto;object-fit:contain;display:block}
 
+/* AUDIO botones con imágenes */
+.audio-controls{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.btn.small{padding:8px 10px}
+.btn-icon{width:22px;height:auto;display:block}
 
-/* ==========================================================
-   TEXTO EN ARCO
-========================================================== */
-.names-wrap{
-  margin-top:5px;
-  overflow:visible;
-}
+/* COUNTDOWN */
+.countdown{background:rgba(255,255,255,0.7);padding:18px;border-radius:8px;margin-top:16px;text-align:center}
+.timer{font-size:30px;color:var(--accent);font-weight:700;margin-top:8px}
+.texto-union{font-size:17px;margin:10px 0}
+.diciembre{font-family:"Great Vibes";font-size:42px;margin:0}
+.anio-2025{font-size:18px;text-align:right;margin-top:-6px}
 
-.arc-svg{
-  width:100%;
-  height:180px;
-}
+/* calendario y bandera */
+.cal-img img{width:100%;max-width:380px;display:block;margin:8px auto;height:auto}
+.bandera-wrap{position:relative;width:100%;max-width:420px;margin:0 auto}
+.bandera{width:35px;position:absolute;right:8px;top:-6px}
 
-.arc-text{
-  font-family:"Great Vibes", cursive;
-  fill:var(--accent);
-  font-size:12vw;         /* AJUSTE AUTOMÁTICO AL ANCHO */
-}
+/* el contenedor donde JS pondrá el link .ics (debajo de la bandera) */
+.ics-wrap{margin-top:36px;text-align:center}
 
+/* DETAILS (fondo vino) */
+.details{background:var(--vino);color:#fff;border-radius:8px;padding:18px;margin-top:18px;text-align:center}
+.head-img{height:58px;display:block;margin:0 auto}
+.small-icon{height:36px;display:inline-block;margin-bottom:6px}
 
-/* ==========================================================
-   CARRO
-========================================================== */
-.carro-wrap{
-  margin-top:0;
-}
-
-.carro{
-  width:100%;
-  height:auto;
-  max-height:none;
-  object-fit:contain;
-}
-
-
-/* ==========================================================
-   AUDIO
-========================================================== */
-.audio-controls{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:14px;
-}
-
-.btn{
-  background:var(--accent);
-  color:white;
-  border:none;
-  padding:10px 15px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.btn.small{
-  font-size:14px;
-  padding:8px 12px;
-}
-
-.btn.muted{
-  background:#555;
-}
-
-
-/* ==========================================================
-   COUNTDOWN
-========================================================== */
-.countdown{
-  background:rgba(255,255,255,0.65);
-  padding:18px;
-  margin-top:20px;
-  border-radius:8px;
-  text-align:center;
-}
-
-.timer{
-  font-size:28px;
-  color:var(--accent);
-  font-weight:700;
-  margin-bottom:12px;
-}
-
-/* Texto adicional */
-.texto-union{
-  margin-top:5px;
-  font-size:18px;
-}
-
-.diciembre{
-  font-family:"Great Vibes", cursive;
-  font-size:42px;
-  margin:0;
-}
-
-.anio-2025{
-  font-size:22px;
-  text-align:right;
-  margin-top:-10px;
-  margin-bottom:12px;
-}
-
-/* Calendario ajustado */
-.cal-img img{
-  width:100%;
-  max-width:380px;
-  height:auto;
-  display:block;
-  margin:0 auto;
-}
-
-/* Bandera pequeña */
-.bandera{
-  width:35px;   /* 4× más pequeña */
-  position:absolute;
-  right:15px;
-  margin-top:10px;
-}
-
-
-/* ==========================================================
-   DETALLES – CEREMONIA Y RECEPCIÓN
-========================================================== */
-.details{
-  background:var(--vino);
-  margin-top:20px;
-  padding:20px;
-  border-radius:8px;
-  color:white;
-}
-
-.section-head{
-  text-align:center;
-}
-
-.head-img{
-  height:58px;
-  margin-bottom:10px;
-}
-
-.detail-block{
-  text-align:center;
-  margin-top:12px;
-}
-
-.small-icon{
-  height:36px;
-  margin-bottom:8px;
-}
-
-
-/* ==========================================================
-   MENÚ
-========================================================== */
+/* MENU (fondo con lazo superior) */
 .menu-section{
-  background:rgba(255,255,255,0.75);
-  margin-top:25px;
-  padding:25px 15px 80px 15px; /* espacio por leyenda */
+  background:rgba(255,255,255,0.85);
+  margin-top:22px;
+  padding:26px 14px 90px 14px;
   border-radius:8px;
   position:relative;
+  /* fondo lazo (ruta desde CSS a img) */
+  background-image: url("../img/menu_lazo.png");
+  background-repeat:no-repeat;
+  background-position: center top;
+  background-size:contain;
 }
 
-.menu-title{
-  text-align:center;
-  font-family:"Great Vibes", cursive;
-  font-size:50px;
-  color:#7a1e1e;
-  margin-bottom:25px;
+.menu-title{font-family:"Great Vibes";font-size:46px;color:#7a1e1e;text-align:center;margin-top:36px}
+.menu-item{margin-bottom:30px;text-align:center}
+.menu-item-title{font-weight:700;font-size:20px}
+.menu-item p{font-size:16px}
+
+/* menu iconos dentro de cada platillo (si los quieres mostrar) */
+.menu-icon{width:34px;display:block;margin:8px auto}
+
+/* leyenda debajo, centrada en columnas */
+.menu-legends{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:36px;z-index:3}
+.legend-item{text-align:center}
+.legend-img{width:36px;display:block;margin:0 auto}
+.legend-text{font-size:13px;margin-top:6px}
+
+/* menu pareja decorativa abajo derecha */
+.menu-pareja{position:absolute;right:12px;bottom:6px;width:95px;opacity:.95;z-index:1}
+
+/* RSVP */
+.rsvp{background:rgba(255,255,255,0.85);padding:18px;border-radius:8px;margin-top:20px}
+label{display:block;margin-top:8px}
+input,select{width:100%;padding:10px;border-radius:6px;border:1px solid #e6e0d6}
+
+/* botón RSVP */
+.rsvp .btn{width:100%;padding:12px;text-align:center;font-weight:700}
+
+/* FOOTER */
+footer.credits{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:18px}
+.footer-text{font-size:15px;line-height:1.3}
+.dos-img{width:130px;transform:rotate(50deg);display:block}
+
+/* Responsive */
+@media(max-width:600px){
+  .hero-img{height:520px}
+  .verse{bottom:16px;left:12px}
+  .arc-text{font-size:12.5vw}
+  .arc-line2{font-size:9.5vw}
+  .menu-title{font-size:36px;margin-top:44px}
+  .bandera{right:6px;top:-8px;width:30px}
+  .dos-img{width:100px}
 }
-
-.menu-item{
-  margin-bottom:32px;
-  text-align:center;
-}
-
-.menu-item-title{
-  font-size:22px;
-  font-weight:bold;
-}
-
-.menu-item p{
-  font-size:17px;
-}
-
-.menu-icon{
-  width:35px;
-  margin-top:10px;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* Leyenda al fondo */
-.menu-legends{
-  position:absolute;
-  left:18px;
-  bottom:12px;
-  display:flex;
-  gap:25px;
-}
-
-.menu-legends div{
-  text-align:center;
-}
-
-.menu-legends img{
-  width:32px;
-}
-
-.menu-legends span{
-  font-size:12px;
-}
-
-/* Pareja decorativa abajo */
-.menu-pareja{
-  position:absolute;
-  right:12px;
-  bottom:0;
-  width:95px;
-  opacity:0.95;
-}
-
-
-/* ==========================================================
-   RSVP
-========================================================== */
-.rsvp{
-  background:rgba(255,255,255,0.65);
-  padding:18px;
-  border-radius:8px;
-  margin-top:20px;
-}
-
-label{
-  display:block;
-  margin-top:10px;
-}
-
-input, select{
-  width:100%;
-  padding:10px;
-  border-radius:6px;
-  border:1px solid #d8d8d8;
-  margin-top:6px;
-}
-
-
-/* ==========================================================
-   FOOTER
-========================================================== */
-footer.credits{
-  margin-top:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.footer-left{
-  flex:1;
-}
-
-.footer-text{
-  font-size:15px;
-  line-height:1.3;
-}
-
-/* Imagen dos.png girada */
-.dos-img{
-  width:130px;
-  transform:rotate(50deg);
-}
-
-
-/* ==========================================================
-   RESPONSI
