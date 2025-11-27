@@ -16,88 +16,80 @@
 <body>
   <main class="container">
 
-    <!-- HERO / PORTADA -->
-    <header class="hero">
-      <img src="assets/img/portada.jpeg" alt="Portada" class="hero-img">
+    <!-- ===================== 1) PORTADA (VERSÍCULO OVERLAY) ===================== -->
+    <header class="hero" role="banner">
+      <!-- Imagen portada (no como fondo, imagen normal) -->
+      <img src="assets/img/portada.jpeg" alt="Portada Jaret & Diana" class="hero-img">
 
-      <!-- Versículo - dentro de la portada, esquina inferior izquierda -->
+      <!-- Versículo: overlay ABSOLUTO dentro del header, esquina inferior izquierda -->
       <div class="verse" aria-hidden="false">
         <p class="verse-text">
           "Por encima de todo, vístanse de<br>
-          amor, que es el vínculo perfecto"
+          amor; que es el vínculo perfecto."
         </p>
-        <p class="verse-ref">— Colosenses 3:14</p>
-      </div>
-
-      <!-- Semáforo -->
-      <div class="semaforo-wrap">
-        <img src="assets/img/semaforo.png" alt="semaforo" class="semaforo">
-      </div>
-
-      <!-- Nombres en arco (doble separación: arc2 más abajo) -->
-      <div class="names-wrap" aria-hidden="false">
-        <svg viewBox="0 0 900 260" class="arc-svg" role="img" aria-label="Nombres">
-          <defs>
-            <path id="arc1" d="M60,140 Q450,20 840,140" />
-            <path id="arc2" d="M70,210 Q450,100 830,210" /> <!-- arc2 está más abajo para doble salto -->
-          </defs>
-
-          <text class="arc-text arc-line1">
-            <textPath href="#arc1" startOffset="50%" text-anchor="middle">
-              Jaret Isaac &amp; Diana Laura
-            </textPath>
-          </text>
-
-          <text class="arc-text arc-line2">
-            <textPath href="#arc2" startOffset="50%" text-anchor="middle">
-              ¡Nos Casamos!
-            </textPath>
-          </text>
-        </svg>
-      </div>
-
-      <!-- Carro (ajustado a ancho) -->
-      <div class="carro-wrap">
-        <img src="assets/img/carro.png" alt="carro" class="carro">
-      </div>
-
-      <!-- Controles de audio: botones con imágenes (funcionales) -->
-      <div class="audio-controls" aria-hidden="false">
-        <button id="tryPlayBtn" class="btn small" aria-label="Reproducir música">
-          <img src="assets/img/music.png" alt="play" class="btn-icon">
-        </button>
-        <button id="muteBtn" class="btn small muted" aria-label="Silenciar">
-          <img src="assets/img/music_off.png" alt="mute" class="btn-icon">
-        </button>
-        <audio id="bgAudio" src="assets/music/musica.mp3" preload="auto" loop></audio>
+        <p class="verse-ref">- Colosenses 3:14</p>
       </div>
     </header>
 
-    <!-- COUNTDOWN -->
-    <section class="countdown">
-      <h2 class="merri">Faltan:</h2>
+    <!-- ===================== 2) SEMÁFORO (debajo de la portada) ===================== -->
+    <div class="semaforo-wrap" aria-hidden="false">
+      <img src="assets/img/semaforo.png" alt="Semáforo" class="semaforo">
+    </div>
+
+    <!-- ===================== 3) TEXTO CURVO (ARCO) ===================== -->
+    <div class="names-wrap" aria-hidden="false">
+      <svg viewBox="0 0 900 260" class="arc-svg" role="img" aria-label="Nombres">
+        <defs>
+          <path id="arc1" d="M60,140 Q450,20 840,140" />
+          <path id="arc2" d="M70,220 Q450,110 830,220" /> <!-- arc2 más abajo para doble salto -->
+        </defs>
+
+        <text class="arc-text arc-line1">
+          <textPath href="#arc1" startOffset="50%" text-anchor="middle">
+            Jaret Isaac &amp; Diana Laura
+          </textPath>
+        </text>
+
+        <text class="arc-text arc-line2">
+          <textPath href="#arc2" startOffset="50%" text-anchor="middle">
+            ¡Nos Casamos!
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- ===================== 4) CARRO ===================== -->
+    <div class="carro-wrap" aria-hidden="false">
+      <img src="assets/img/carro.png" alt="Carro" class="carro">
+    </div>
+
+    <!-- ===================== 5) CONTADOR (Faltan:) ===================== -->
+    <section class="countdown" aria-live="polite">
+      <div class="count-title">Faltan:</div>
       <div id="countdownTimer" class="timer">--d --h --m --s</div>
+    </section>
 
-      <p class="merri texto-union">Queremos compartir contigo<br>la felicidad de nuestra unión</p>
-
-      <p class="diciembre">Diciembre</p>
-      <p class="anio-2025">2025</p>
-
+    <!-- ===================== 6) CALENDARIO + BANDERA + LINK GCAL ===================== -->
+    <section class="calendar-section" style="text-align:center; margin-top:18px;">
       <div class="cal-img">
         <img src="assets/img/calendario.png" alt="Calendario">
       </div>
 
-      <!-- Bandera (pequeña) y espacio para .ics debajo -->
-      <div class="bandera-wrap">
-        <img src="assets/img/bandera.png" alt="bandera" class="bandera">
-        <div id="icsWrap" class="ics-wrap" aria-hidden="false"></div>
+      <!-- Bandera alineada derecha debajo del calendario -->
+      <div style="width:100%; max-width:420px; margin:0 auto; position:relative;">
+        <img src="assets/img/bandera.png" alt="Bandera" class="bandera" style="position:relative; float:right; margin-top:8px;">
+      </div>
+
+      <!-- Enlace Google Calendar debajo de la bandera (sin .ics) -->
+      <div style="max-width:420px; margin:6px auto 0 auto; text-align:right;">
+        <a href="#" id="gcalLink" class="btn-link" target="_blank" rel="noopener">Agregar a Google Calendar</a>
       </div>
     </section>
 
-    <!-- DETALLES (fondo vino) -->
-    <section class="details">
+    <!-- ===================== 7) DETALLES (CON IMÁGENES marriage + croissant) ===================== -->
+    <section class="details" aria-label="Detalles de ceremonia y recepción">
       <div class="section-head">
-        <img src="assets/img/marriage.png" alt="marriage" class="head-img">
+        <img src="assets/img/marriage.png" alt="Marriage" class="head-img">
       </div>
 
       <div class="detail-block">
@@ -106,77 +98,76 @@
       </div>
 
       <div class="detail-block">
-        <img src="assets/img/croissant.png" alt="croissant" class="small-icon">
+        <img src="assets/img/croissant.png" alt="Croissant" class="small-icon">
         <h3 class="merri">Lugar de recepción</h3>
         <p class="merri">Pan &amp; Paz - Panadería Francesa<br>León, Nicaragua</p>
         <p>
-          <a class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">
-            Dar click para ver en Google Maps
-          </a>
+          <a class="btn-link" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">Dar click para ver en Google Maps</a>
         </p>
       </div>
     </section>
 
-    <!-- MENÚ (fondo con lazo en la parte superior) -->
-    <section class="menu-section">
-      <div class="menu-container">
-        <h2 class="menu-title">Menú</h2>
+    <!-- ===================== 8) MENÚ (menu_lazo en top, leyenda alineada izquierda) ===================== -->
+    <section class="menu-section" aria-label="Menú de la recepción">
+      <!-- Lazo decorativo en la parte superior (imagen) -->
+      <img src="assets/img/menu_lazo.png" alt="Decoración lazo" class="menu-lazo">
 
-        <div class="menu-item">
-          <h3 class="menu-item-title">Baguette Veggie</h3>
-          <p>Verduras asadas con salsa<br>de marañón y hierbas</p>
-          <img src="assets/img/icono_vegetariano.jpeg" class="menu-icon" alt="Vegetariano">
-        </div>
+      <h2 class="menu-title">Menú</h2>
 
-        <div class="menu-item">
-          <h3 class="menu-item-title">Panini Gourmet<br>Camembert</h3>
-          <p>Cremoso queso camembert,<br>manzana, espinaca fresca,<br>mostaza-miel aderezo</p>
-          <img src="assets/img/icono_vegano.jpeg" class="menu-icon" alt="Vegano">
-        </div>
-
-        <div class="menu-item">
-          <h3 class="menu-item-title">Crema y Sándwich</h3>
-          <p>
-            Crema especial con su opción de sándwich:<br>
-            • Verduras y pesto<br>
-            • Pollo o jamón y queso<br>
-            (opción de pan blanco o integral)
-          </p>
-        </div>
-
-        <div class="menu-item">
-          <h3 class="menu-item-title">Bebidas</h3>
-          <p>
-            Refrescante agua con gas, con frutas &amp; hierbas<br><br>
-            Fresa &amp; Pepino<br>
-            Arándano &amp; Limón<br>
-            Limonada de jengibre
-          </p>
-        </div>
-
-        <!-- espacio extra antes de la leyenda -->
-        <div style="height:18px;"></div>
-
-        <!-- Leyenda debajo de todo el texto (cada imagen con su texto debajo) -->
-        <div class="menu-legends">
-          <div class="legend-item">
-            <img src="assets/img/icono_vegetariano.jpeg" alt="Vegetariano" class="legend-img">
-            <div class="legend-text">Vegetariano</div>
-          </div>
-
-          <div class="legend-item">
-            <img src="assets/img/icono_vegano.jpeg" alt="Vegano" class="legend-img">
-            <div class="legend-text">Vegano</div>
-          </div>
-        </div>
-
-        <!-- Imagen pareja abajo derecha (más pequeña) -->
-        <img src="assets/img/menu_pareja.jpeg" class="menu-pareja" alt="pareja">
+      <div class="menu-item">
+        <h3 class="menu-item-title">Baguette Veggie</h3>
+        <p>Verduras asadas con salsa<br>de marañón y hierbas</p>
+        <img src="assets/img/icono_vegetariano.jpeg" alt="Vegetariano" class="menu-icon" style="margin-top:8px;">
       </div>
+
+      <div class="menu-item">
+        <h3 class="menu-item-title">Panini Gourmet<br>Camembert</h3>
+        <p>Cremoso queso camembert,<br>manzana, espinaca fresca,<br>mostaza-miel aderezo</p>
+        <img src="assets/img/icono_vegano.jpeg" alt="Vegano" class="menu-icon" style="margin-top:8px;">
+      </div>
+
+      <div class="menu-item">
+        <h3 class="menu-item-title">Crema y Sándwich</h3>
+        <p>
+          Crema especial con su opción de sándwich:<br>
+          • Verduras y pesto<br>
+          • Pollo o jamón y queso<br>
+          (opción de pan blanco o integral)
+        </p>
+      </div>
+
+      <div class="menu-item">
+        <h3 class="menu-item-title">Bebidas</h3>
+        <p>
+          Refrescante agua con gas, con frutas &amp; hierbas<br><br>
+          Fresa &amp; Pepino<br>
+          Arándano &amp; Limón<br>
+          Limonada de jengibre
+        </p>
+      </div>
+
+      <!-- Espacio extra antes de la leyenda -->
+      <div style="height:18px;"></div>
+
+      <!-- Leyenda: alineada a la izquierda del bloque (usamos un contenedor que CSS muestra centrado; inline style fuerza left) -->
+      <div class="menu-legends" style="justify-content:flex-start;">
+        <div style="text-align:center; margin-right:18px;">
+          <img src="assets/img/icono_vegetariano.jpeg" alt="Vegetariano" style="width:36px;display:block;margin:0 auto;">
+          <div style="font-size:13px; margin-top:6px;">Vegetariano</div>
+        </div>
+
+        <div style="text-align:center;">
+          <img src="assets/img/icono_vegano.jpeg" alt="Vegano" style="width:36px;display:block;margin:0 auto;">
+          <div style="font-size:13px; margin-top:6px;">Vegano</div>
+        </div>
+      </div>
+
+      <!-- Imagen pareja abajo derecha (más pequeña) -->
+      <img src="assets/img/menu_pareja.jpeg" alt="Pareja" class="menu-pareja">
     </section>
 
-    <!-- RSVP -->
-    <section class="rsvp">
+    <!-- ===================== 9) RSVP (formulario) ===================== -->
+    <section class="rsvp" aria-label="Confirmación de asistencia">
       <form id="rsvpForm">
         <label>Nombre completo
           <input type="text" name="name" required>
@@ -209,12 +200,12 @@
         </label>
 
         <button class="btn" type="submit">Dar click para enviar confirmación</button>
-        <div id="formMsg" role="status" aria-live="polite"></div>
+        <div id="formMsg" role="status" aria-live="polite" style="margin-top:8px;"></div>
       </form>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="credits">
+    <!-- ===================== 10) FOOTER ===================== -->
+    <footer class="credits" aria-label="Agradecimientos">
       <div class="footer-left">
         <p class="merri footer-text">
           Nuestra felicidad solo está completa cuando la compartimos<br>
@@ -228,9 +219,31 @@
       </div>
     </footer>
 
+    <!-- ===================== 11) CONTROLES DE AUDIO (botones con imágenes sin fondo) ===================== -->
+    <!-- Los botones están separados del header para accesibilidad; el CSS los posiciona donde corresponda -->
+    <div class="audio-controls" style="margin-top:16px;">
+      <button id="tryPlayBtn" class="audio-btn" aria-label="Reproducir">
+        <img src="assets/img/music.png" alt="play" class="audio-icon">
+      </button>
+      <button id="muteBtn" class="audio-btn" aria-label="Silenciar">
+        <img src="assets/img/music_off.png" alt="mute" class="audio-icon">
+      </button>
+      <audio id="bgAudio" src="assets/music/musica.mp3" preload="auto" loop></audio>
+    </div>
+
   </main>
 
-  <!-- JS con versionado -->
+  <!-- JS con versionado para evitar caché -->
   <script src="assets/js/script.js?v=2"></script>
+  <script>
+    // Setea el enlace de Google Calendar (se coloca aquí para que esté disponible inmediatamente)
+    (function(){
+      const gLink = "https://www.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent("Boda — Jaret & Diana") +
+                    "&dates=20251222T150000Z/20251222T180000Z&details=" + encodeURIComponent("Ceremonia y recepción") +
+                    "&location=" + encodeURIComponent("Pan & Paz - Panadería Francesa, León, Nicaragua");
+      const a = document.getElementById('gcalLink');
+      if(a) a.href = gLink;
+    })();
+  </script>
 </body>
 </html>
