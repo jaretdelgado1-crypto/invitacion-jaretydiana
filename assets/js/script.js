@@ -64,16 +64,9 @@ updateCountdown();
 
 /* GOOGLE CALENDAR + .ICS link placed under bandera */
 
-/**
- * Formatea la fecha para Google Calendar e ICS usando la hora LOCAL.
- * Esto corrige el problema de la fecha incorrecta (1901).
- */
 function formatDateICS(d){
   const pad = n => n < 10 ? "0"+n : n;
-  // Usamos métodos locales (.getFullYear, .getHours, etc.)
-  return d.getFullYear() + pad(d.getMonth()+1) + pad(d.getDate()) + "T" + 
-         pad(d.getHours()) + pad(d.getMinutes()) + pad(d.getSeconds());
-  // Eliminamos la 'Z' (Zulu/UTC) al final, ya que estamos usando hora local.
+  return d.getUTCFullYear() + pad(d.getUTCMonth()+1) + pad(d.getUTCDate()) + "T" + pad(d.getUTCHours()) + pad(d.getUTCMinutes()) + pad(d.getUTCSeconds()) + "Z";
 }
 
 const eventStart = new Date(TARGET_DATE);
