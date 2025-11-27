@@ -213,6 +213,20 @@ footer.credits{display:flex;gap:12px;align-items:center;justify-content:space-be
     margin-bottom: 20px;
 }
 
+/* ===============================
+   Estilos para los links del ICS
+   =============================== */
+.ics-wrap a {
+  display: block;
+  margin: 6px auto;
+  text-align: center;
+  font-size: 14px;
+  color: #003865;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
 /* Responsive */
 @media(max-width:600px){
   .hero-img{height:520px}
