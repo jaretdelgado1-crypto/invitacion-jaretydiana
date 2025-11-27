@@ -39,23 +39,27 @@ body{
   color:#fff;
   text-shadow:0 2px 4px rgba(0,0,0,0.6);
   max-width:70%;
-  line-height:1.25;
+  line-height:1.3;
    text-align: left; /*nuevo, para alinearlo a la derecha*/
 }
 .verse-text{font-size:18px;
             margin:0;
             font-style:italic;
-            white-space:pre-line /*Nuevo: Permite que los <br> y los espacios se manejen con más precisión */
+            white-space:pre-line; /*Nuevo: Permite que los <br> y los espacios se manejen con más precisión */
+            margin:0
            }
 .verse-ref{font-size:13px;
            margin-top:6px;
            opacity:.95
           }
-@media(max-width:600px){
-  .hero-img{height:520px}
+@media (max-width:600px){
   .verse{
-    bottom:16px;
-    left:12px;
+    bottom: 16px;
+    top: auto;        /* evita que suba */
+    left: 14px;
+    right: auto;
+    max-width: 80%;
+    font-size: 15px;
   }
 }
 
