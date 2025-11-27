@@ -72,7 +72,7 @@ body{
 .semaforo{width:200px;height:auto;margin-top:0px;z-index:30}
 
 /* ARC TEXT (Opción B: grande pero elegante) */
-.names-wrap{margin-top:1px}
+.names-wrap{margin-top:-10px}
 .arc-svg{width:100%;height:240px}
 .arc-text{font-family:"Great Vibes",cursive;
           fill:var(--accent);
@@ -84,11 +84,11 @@ body{
 .arc-line2{font-size:7.2vw}
 
 /* CARRO */
-.carro-wrap{margin-top:-90px;z-index:10}  /*el margin top me sirve para moverlo de arriba abajo*/
+.carro-wrap{margin-top:-130px;z-index:10}  /*el margin top me sirve para moverlo de arriba abajo*/
 .carro{width:100%;height:auto;object-fit:contain;display:block}
 
 /* AUDIO botones con imágenes */
-.audio-controls{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.audio-controls{display:flex;gap:8px;justify-content:center;margin-top:8px}
 .btn {
   background: transparent; /* CAMBIO: Fondo transparente */
   color: #003865; /* Color del texto (azul oscuro) para el link de Maps */
