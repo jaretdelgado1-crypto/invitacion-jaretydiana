@@ -64,23 +64,33 @@ updateCountdown();
 
 /* GOOGLE CALENDAR + .ICS link placed under bandera */
 
-function formatDateICS(d){
+function formatDateICS_local(d){
   const pad = n => n < 10 ? "0"+n : n;
-  return d.getUTCFullYear() + pad(d.getUTCMonth()+1) + pad(d.getUTCDate()) + "T" + pad(d.getUTCHours()) + pad(d.getUTCMinutes()) + pad(d.getUTCSeconds()) + "Z";
+  return (
+    d.getFullYear().toString() +
+    pad(d.getMonth()+1) +
+    pad(d.getDate()) +
+    "T" +
+    pad(d.getHours()) +
+    pad(d.getMinutes()) +
+    pad(d.getSeconds())
+  );
 }
+
 
 const eventStart = new Date(TARGET_DATE);
 const eventEnd = new Date(TARGET_DATE.getTime() + 2*60*60*1000);
 const gLink = "https://www.google.com/calendar/render?action=TEMPLATE" +
               "&text=" + encodeURIComponent("Boda — Jaret & Diana") +
-              "&dates=" + formatDateICS(eventStart) + "/" + formatDateICS(eventEnd) +
+              "&dates=" + formatDateICS_local(eventStart) + "/" + formatDateICS_local(eventEnd) +
               "&details=" + encodeURIComponent("Ceremonia y recepción") +
               "&location=" + encodeURIComponent("Pan & Paz - Panadería Francesa, León, Nicaragua");
 
 // create .ics and append under #icsWrap
 function createICSandAppend(){
-  const dtstart = formatDateICS(eventStart);
-  const dtend = formatDateICS(eventEnd);
+const dtstart = formatDateICS_local(eventStart);
+const dtend = formatDateICS_local(eventEnd);
+
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
