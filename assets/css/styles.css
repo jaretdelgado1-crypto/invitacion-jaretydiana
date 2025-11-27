@@ -50,10 +50,10 @@ body{
   line-height:1.25;
    text-align: left; /*nuevo, para alinearlo a la derecha*/
 }
-.verse-text{font-size:18px;
+.verse-text{font-size:15px;
             margin:0;
             font-style:italic;
-            white-space:pre-line /*Nuevo: Permite que los <br> y los espacios se manejen con más precisión */
+            /*white-space:pre-line /*Nuevo: Permite que los <br> y los espacios se manejen con más precisión */
            }
 .verse-ref{font-size:13px;
            margin-top:6px;
