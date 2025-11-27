@@ -41,7 +41,7 @@ body{
 /* Verse: forzado encima y en esquina inferior izquierda */
 .verse{
   position:absolute;
-  bottom:22px;
+  bottom:52px;
   left:22px;
   z-index:40; /* por encima del carro */
   color:#fff;
