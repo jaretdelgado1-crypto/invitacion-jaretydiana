@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Jaret & Diana — Invitación</title>
 
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- CSS con versionado para evitar caché -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=2">
+  <meta name="description" content="Invitación de boda - Jaret & Diana">
 </head>
 
 <body>
   <main class="container">
 
-    <!-- ===================== HERO ===================== -->
+    <!-- HERO / PORTADA -->
     <header class="hero">
-      <img src="assets/img/portada.jpeg" class="hero-img">
+      <img src="assets/img/portada.jpeg" alt="Portada" class="hero-img">
 
-      <!-- Versículo - posición correcta -->
-      <div class="verse">
+      <!-- Versículo - dentro de la portada, esquina inferior izquierda -->
+      <div class="verse" aria-hidden="false">
         <p class="verse-text">
           "Por encima de todo, vístanse de<br>
           amor, que es el vínculo perfecto"
@@ -28,24 +31,24 @@
 
       <!-- Semáforo -->
       <div class="semaforo-wrap">
-        <img src="assets/img/semaforo.png" class="semaforo">
+        <img src="assets/img/semaforo.png" alt="semaforo" class="semaforo">
       </div>
 
-      <!-- Texto curvo ajustado a ancho -->
-      <div class="names-wrap">
-        <svg viewBox="0 0 900 220" class="arc-svg">
+      <!-- Nombres en arco (doble separación: arc2 más abajo) -->
+      <div class="names-wrap" aria-hidden="false">
+        <svg viewBox="0 0 900 260" class="arc-svg" role="img" aria-label="Nombres">
           <defs>
-            <path id="arc1" d="M60,130 Q450,10 840,130" />
-            <path id="arc2" d="M70,170 Q450,50 830,170" />
+            <path id="arc1" d="M60,140 Q450,20 840,140" />
+            <path id="arc2" d="M70,210 Q450,100 830,210" /> <!-- arc2 está más abajo para doble salto -->
           </defs>
 
-          <text class="arc-text">
+          <text class="arc-text arc-line1">
             <textPath href="#arc1" startOffset="50%" text-anchor="middle">
               Jaret Isaac &amp; Diana Laura
             </textPath>
           </text>
 
-          <text class="arc-text">
+          <text class="arc-text arc-line2">
             <textPath href="#arc2" startOffset="50%" text-anchor="middle">
               ¡Nos Casamos!
             </textPath>
@@ -53,20 +56,24 @@
         </svg>
       </div>
 
-      <!-- Carro ancho completo -->
+      <!-- Carro (ajustado a ancho) -->
       <div class="carro-wrap">
-        <img src="assets/img/carro.png" class="carro">
+        <img src="assets/img/carro.png" alt="carro" class="carro">
       </div>
 
-      <!-- Audio -->
-      <div class="audio-controls">
-        <button id="tryPlayBtn" class="btn small">🔊 Reproducir música</button>
-        <button id="muteBtn" class="btn small muted">🔇 Silenciar</button>
+      <!-- Controles de audio: botones con imágenes (funcionales) -->
+      <div class="audio-controls" aria-hidden="false">
+        <button id="tryPlayBtn" class="btn small" aria-label="Reproducir música">
+          <img src="assets/img/music.png" alt="play" class="btn-icon">
+        </button>
+        <button id="muteBtn" class="btn small muted" aria-label="Silenciar">
+          <img src="assets/img/music_off.png" alt="mute" class="btn-icon">
+        </button>
         <audio id="bgAudio" src="assets/music/musica.mp3" preload="auto" loop></audio>
       </div>
     </header>
 
-    <!-- ===================== COUNTDOWN ===================== -->
+    <!-- COUNTDOWN -->
     <section class="countdown">
       <h2 class="merri">Faltan:</h2>
       <div id="countdownTimer" class="timer">--d --h --m --s</div>
@@ -77,100 +84,98 @@
       <p class="anio-2025">2025</p>
 
       <div class="cal-img">
-        <img src="assets/img/calendario.png">
+        <img src="assets/img/calendario.png" alt="Calendario">
       </div>
 
-      <img src="assets/img/bandera.png" class="bandera">
+      <!-- Bandera (pequeña) y espacio para .ics debajo -->
+      <div class="bandera-wrap">
+        <img src="assets/img/bandera.png" alt="bandera" class="bandera">
+        <div id="icsWrap" class="ics-wrap" aria-hidden="false"></div>
+      </div>
     </section>
 
-    <!-- ===================== DETALLES ===================== -->
+    <!-- DETALLES (fondo vino) -->
     <section class="details">
-
       <div class="section-head">
-        <img src="assets/img/marriage.png" class="head-img">
+        <img src="assets/img/marriage.png" alt="marriage" class="head-img">
       </div>
 
-      <div class="detail-block ceremony-block">
+      <div class="detail-block">
         <h3 class="merri">Ceremonia Religiosa</h3>
         <p class="merri small">Hora: 03:00 PM</p>
       </div>
 
       <div class="detail-block">
-        <img src="assets/img/croissant.png" class="small-icon">
+        <img src="assets/img/croissant.png" alt="croissant" class="small-icon">
         <h3 class="merri">Lugar de recepción</h3>
         <p class="merri">Pan &amp; Paz - Panadería Francesa<br>León, Nicaragua</p>
-        <p><a class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank">Ver ubicación</a></p>
+        <p>
+          <a class="btn" href="https://maps.app.goo.gl/URcum5eFGX5AQMau9" target="_blank" rel="noopener">
+            Dar click para ver en Google Maps
+          </a>
+        </p>
       </div>
-
     </section>
 
-    <!-- ===================== MENU ===================== -->
+    <!-- MENÚ (fondo con lazo en la parte superior) -->
     <section class="menu-section">
+      <div class="menu-container">
+        <h2 class="menu-title">Menú</h2>
 
-      <h2 class="menu-title">Menú</h2>
-
-      <!-- Baguette veggie -->
-      <div class="menu-item">
-        <h3 class="menu-item-title">Baguette Veggie</h3>
-        <p>
-          Verduras asadas con salsa<br>
-          de marañón y hierbas
-        </p>
-        <img src="assets/img/icono_vegetariano.jpeg" class="menu-icon">
-      </div>
-
-      <!-- Panini gourmet -->
-      <div class="menu-item">
-        <h3 class="menu-item-title">Panini Gourmet<br>Camembert</h3>
-        <p>
-          Cremoso queso camembert,<br>
-          manzana, espinaca fresca,<br>
-          mostaza-miel aderezo
-        </p>
-        <img src="assets/img/icono_vegano.jpeg" class="menu-icon">
-      </div>
-
-      <!-- Crema y sandwich -->
-      <div class="menu-item">
-        <h3 class="menu-item-title">Crema y Sándwich</h3>
-        <p>
-          Crema especial con su opción de sándwich:<br>
-          • Verduras y pesto<br>
-          • Pollo o jamón y queso<br>
-          (opción de pan blanco o integral)
-        </p>
-      </div>
-
-      <!-- Bebidas -->
-      <div class="menu-item">
-        <h3 class="menu-item-title">Bebidas</h3>
-        <p>
-          Refrescante agua con gas, con<br>
-          frutas & hierbas<br><br>
-          Fresa & Pepino<br>
-          Arándano & Limón<br>
-          Limonada de jengibre
-        </p>
-      </div>
-
-      <!-- Leyenda abajo -->
-      <div class="menu-legends">
-        <div>
-          <img src="assets/img/icono_vegetariano.jpeg">
-          <span>Vegetariano</span>
+        <div class="menu-item">
+          <h3 class="menu-item-title">Baguette Veggie</h3>
+          <p>Verduras asadas con salsa<br>de marañón y hierbas</p>
+          <img src="assets/img/icono_vegetariano.jpeg" class="menu-icon" alt="Vegetariano">
         </div>
 
-        <div>
-          <img src="assets/img/icono_vegano.jpeg">
-          <span>Vegano</span>
+        <div class="menu-item">
+          <h3 class="menu-item-title">Panini Gourmet<br>Camembert</h3>
+          <p>Cremoso queso camembert,<br>manzana, espinaca fresca,<br>mostaza-miel aderezo</p>
+          <img src="assets/img/icono_vegano.jpeg" class="menu-icon" alt="Vegano">
         </div>
-      </div>
 
-      <!-- Pareja al fondo derecha -->
-      <img src="assets/img/menu_pareja.jpeg" class="menu-pareja">
+        <div class="menu-item">
+          <h3 class="menu-item-title">Crema y Sándwich</h3>
+          <p>
+            Crema especial con su opción de sándwich:<br>
+            • Verduras y pesto<br>
+            • Pollo o jamón y queso<br>
+            (opción de pan blanco o integral)
+          </p>
+        </div>
+
+        <div class="menu-item">
+          <h3 class="menu-item-title">Bebidas</h3>
+          <p>
+            Refrescante agua con gas, con frutas &amp; hierbas<br><br>
+            Fresa &amp; Pepino<br>
+            Arándano &amp; Limón<br>
+            Limonada de jengibre
+          </p>
+        </div>
+
+        <!-- espacio extra antes de la leyenda -->
+        <div style="height:18px;"></div>
+
+        <!-- Leyenda debajo de todo el texto (cada imagen con su texto debajo) -->
+        <div class="menu-legends">
+          <div class="legend-item">
+            <img src="assets/img/icono_vegetariano.jpeg" alt="Vegetariano" class="legend-img">
+            <div class="legend-text">Vegetariano</div>
+          </div>
+
+          <div class="legend-item">
+            <img src="assets/img/icono_vegano.jpeg" alt="Vegano" class="legend-img">
+            <div class="legend-text">Vegano</div>
+          </div>
+        </div>
+
+        <!-- Imagen pareja abajo derecha (más pequeña) -->
+        <img src="assets/img/menu_pareja.jpeg" class="menu-pareja" alt="pareja">
+      </div>
     </section>
 
-    <!-- ===================== RSVP ===================== -->
+    <!-- RSVP -->
     <section class="rsvp">
       <form id="rsvpForm">
         <label>Nombre completo
@@ -180,35 +185,35 @@
         <label>Asistirá?
           <select name="attend" required>
             <option value="">Seleccionar</option>
-            <option>Sí</option>
-            <option>No</option>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
           </select>
         </label>
 
         <label>Platillo
           <select name="platillo" required>
             <option value="">Seleccionar</option>
-            <option>Baguette Veggie</option>
-            <option>Panini Gourmet Camembert</option>
-            <option>Crema Sandwich</option>
+            <option value="Baguette Veggie">Baguette Veggie</option>
+            <option value="Panini Gourmet Camembert">Panini Gourmet Camembert</option>
+            <option value="Crema Sandwich">Crema Sandwich</option>
           </select>
         </label>
 
         <label>Bebida
           <select name="bebida" required>
             <option value="">Seleccionar</option>
-            <option>Fresa & Pepino</option>
-            <option>Arándano & Limón</option>
-            <option>Limonada de jengibre</option>
+            <option value="Fresa &amp; Pepino">Fresa &amp; Pepino</option>
+            <option value="Arándano &amp; Limón">Arándano &amp; Limón</option>
+            <option value="Limonada de jengibre">Limonada de jengibre</option>
           </select>
         </label>
 
-        <button class="btn" type="submit">Enviar RSVP</button>
-        <div id="formMsg"></div>
+        <button class="btn" type="submit">Dar click para enviar confirmación</button>
+        <div id="formMsg" role="status" aria-live="polite"></div>
       </form>
     </section>
 
-    <!-- ===================== FOOTER ===================== -->
+    <!-- FOOTER -->
     <footer class="credits">
       <div class="footer-left">
         <p class="merri footer-text">
@@ -219,12 +224,13 @@
       </div>
 
       <div class="footer-right">
-        <img src="assets/img/dos.png" class="dos-img">
+        <img src="assets/img/dos.png" alt="dos" class="dos-img">
       </div>
     </footer>
 
   </main>
 
-  <script src="assets/js/script.js"></script>
+  <!-- JS con versionado -->
+  <script src="assets/js/script.js?v=2"></script>
 </body>
 </html>
