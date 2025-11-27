@@ -1,287 +1,141 @@
-/* ===========================
-   styles.css — Invitación Jaret & Diana
-   =========================== */
+/* ==========================================================
+   STYLES.CSS final (versión para pegar)
+   ========================================================== */
 
 :root{
   --accent:#003865;
   --bg:#f7efe6;
-  --paper:#f1eadf;
   --muted:#6b6b6b;
+  --container:980px;
+  --vino:#8A2B2B;
 }
 
-/* ===========================
-   GLOBAL
-   =========================== */
-
+/* cuerpo y contenedor */
 body{
   margin:0;
   font-family:"Merriweather", serif;
-  background:var(--bg);
+  background:
+    linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.02) 0, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 6px),
+    var(--bg);
+  color:#222;
 }
-
-/* Contenedor general */
 .container{
-  max-width:900px;
+  max-width:var(--container);
   margin:0 auto;
-  padding:22px;
+  padding:18px;
 }
 
-/* ===========================
-   1. PORTADA + VERSÍCULO
-   =========================== */
+/* HERO */
+.hero{position:relative;text-align:center}
+.hero-img{width:100%;height:460px;object-fit:cover;border-radius:8px;filter:brightness(.82);display:block}
 
-.hero{
-  position:relative;
-  text-align:center;
-}
-
-.hero-img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  display:block;
-  border-radius:8px;
-}
-
-/* Versículo dentro de la imagen */
+/* Verse: forzado encima y en esquina inferior izquierda */
 .verse{
   position:absolute;
-  bottom:18px;
-  left:18px;
+  bottom:22px;
+  left:22px;
+  z-index:40; /* por encima del carro */
   color:#fff;
-  font-size:15px;
-  text-align:left;
-  line-height:1.3;
-  text-shadow:0 3px 6px rgba(0,0,0,0.55);
+  text-shadow:0 2px 4px rgba(0,0,0,0.6);
   max-width:70%;
+  line-height:1.25;
 }
+.verse-text{font-size:18px;margin:0;font-style:italic}
+.verse-ref{font-size:13px;margin-top:6px;opacity:.95}
 
-@media(max-width:600px){
-  .verse{
-    font-size:13px;
-    bottom:12px;
-    left:12px;
-  }
-}
+/* semaforo aumentado */
+.semaforo{width:110px;height:auto;margin-top:12px;z-index:30}
 
-/* ===========================
-   2. SEMÁFORO
-   =========================== */
+/* ARC TEXT (Opción B: grande pero elegante) */
+.names-wrap{margin-top:6px}
+.arc-svg{width:100%;height:210px}
+.arc-text{font-family:"Great Vibes",cursive;fill:var(--accent);font-size:9vw;/* responsive */}
 
-.semaforo{
-  width:120px;
-  display:block;
-  margin:18px auto 0 auto;
-}
+/* line2 (Nos Casamos) ligeramente más pequeño */
+.arc-line2{font-size:7.2vw}
 
-/* ===========================
-   3. TEXTO CURVO
-   =========================== */
+/* CARRO */
+.carro-wrap{margin-top:6px;z-index:10}
+.carro{width:100%;height:auto;object-fit:contain;display:block}
 
-.names-wrap{
-  margin-top:10px;
-}
+/* AUDIO botones con imágenes */
+.audio-controls{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.btn.small{padding:8px 10px}
+.btn-icon{width:22px;height:auto;display:block}
 
-.arc-svg{
-  width:100%;
-  height:200px;
-}
+/* COUNTDOWN */
+.countdown{background:rgba(255,255,255,0.7);padding:18px;border-radius:8px;margin-top:16px;text-align:center}
+.timer{font-size:30px;color:var(--accent);font-weight:700;margin-top:8px}
+.texto-union{font-size:17px;margin:10px 0}
+.diciembre{font-family:"Great Vibes";font-size:42px;margin:0}
+.anio-2025{font-size:18px;text-align:right;margin-top:-6px}
 
-.arc-text{
-  fill:var(--accent);
-  font-family:'Great Vibes', cursive;
-  font-size:52px;
-}
+/* calendario y bandera */
+.cal-img img{width:100%;max-width:380px;display:block;margin:8px auto;height:auto}
+.bandera-wrap{position:relative;width:100%;max-width:420px;margin:0 auto}
+.bandera{width:35px;position:absolute;right:8px;top:-6px}
 
-@media(max-width:600px){
-  .arc-text{
-    font-size:40px;
-  }
-}
+/* el contenedor donde JS pondrá el link .ics (debajo de la bandera) */
+.ics-wrap{margin-top:36px;text-align:center}
 
-/* ===========================
-   4. CARRO
-   =========================== */
+/* DETAILS (fondo vino) */
+.details{background:var(--vino);color:#fff;border-radius:8px;padding:18px;margin-top:18px;text-align:center}
+.head-img{height:58px;display:block;margin:0 auto}
+.small-icon{height:36px;display:inline-block;margin-bottom:6px}
 
-.carro{
-  width:100%;
-  max-height:200px;
-  object-fit:contain;
-  margin-top:0;
-}
-
-/* ===========================
-   5. CONTADOR
-   =========================== */
-
-.countdown{
-  text-align:center;
-  margin-top:8px;
-}
-
-.count-title{
-  font-family:"Merriweather", serif;
-  font-size:22px;
-  margin-bottom:6px;
-}
-
-.timer{
-  font-size:28px;
-  font-weight:700;
-  color:var(--accent);
-}
-
-/* ===========================
-   6. CALENDARIO + BANDERA
-   =========================== */
-
-.cal-img{
-  margin-top:20px;
-  text-align:center;
-}
-
-.cal-img img{
-  width:100%;
-  max-width:380px;
-  display:block;
-  margin:0 auto;
-}
-
-.bandera{
-  display:block;
-  width:70px;
-  margin-left:auto;
-  margin-top:6px;
-}
-
-/* enlace ics debajo de la bandera */
-.ics-link{
-  display:block;
-  text-align:right;
-  margin-top:4px;
-}
-
-/* ===========================
-   7. DETALLES
-   =========================== */
-
-.details{
-  background:#8A2B2B;
-  color:#fff;
-  padding:22px;
-  border-radius:8px;
-  margin-top:22px;
-  text-align:center;
-}
-
-.head-img{
-  height:60px;
-  margin-bottom:8px;
-}
-
-.small-icon{
-  height:50px;
-}
-
-/* LINK GOOGLE MAPS SIN FONDO */
-.btn-link{
-  color:#fff;
-  font-weight:bold;
-  text-decoration:underline;
-}
-
-/* ===========================
-   8. SECCIÓN MENÚ
-   =========================== */
-
+/* MENU (fondo con lazo superior) */
 .menu-section{
-  background:rgba(255,255,255,0.75);
-  padding:20px 14px;
-  margin-top:28px;
+  background:rgba(255,255,255,0.85);
+  margin-top:22px;
+  padding:26px 14px 90px 14px;
   border-radius:8px;
   position:relative;
+  /* fondo lazo (ruta desde CSS a img) */
+  background-image: url("../img/menu_lazo.png");
+  background-repeat:no-repeat;
+  background-position: center top;
+  background-size:contain;
 }
 
-.menu-lazo{
-  width:90%;
-  max-width:350px;
-  display:block;
-  margin:0 auto -10px auto;
-  opacity:0.9;
-}
+.menu-title{font-family:"Great Vibes";font-size:46px;color:#7a1e1e;text-align:center;margin-top:36px}
+.menu-item{margin-bottom:30px;text-align:center}
+.menu-item-title{font-weight:700;font-size:20px}
+.menu-item p{font-size:16px}
 
-.menu-title{
-  text-align:center;
-  font-family:"Great Vibes", cursive;
-  font-size:46px;
-  color:#7a1e1e;
-  margin-bottom:22px;
-}
+/* menu iconos dentro de cada platillo (si los quieres mostrar) */
+.menu-icon{width:34px;display:block;margin:8px auto}
 
-.menu-item{
-  margin-bottom:36px;
-  text-align:center;
-}
+/* leyenda debajo, centrada en columnas */
+.menu-legends{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:36px;z-index:3}
+.legend-item{text-align:center}
+.legend-img{width:36px;display:block;margin:0 auto}
+.legend-text{font-size:13px;margin-top:6px}
 
-/* LEYENDA ALINEADA A LA IZQUIERDA */
-.menu-legends{
-  margin-top:28px;
-  display:flex;
-  gap:22px;
-}
+/* menu pareja decorativa abajo derecha */
+.menu-pareja{position:absolute;right:12px;bottom:6px;width:95px;opacity:.95;z-index:1}
 
-.menu-legends div{
-  text-align:center;
-}
+/* RSVP */
+.rsvp{background:rgba(255,255,255,0.85);padding:18px;border-radius:8px;margin-top:20px}
+label{display:block;margin-top:8px}
+input,select{width:100%;padding:10px;border-radius:6px;border:1px solid #e6e0d6}
 
-.menu-legends img{
-  width:32px;
-  display:block;
-  margin:0 auto;
-}
+/* botón RSVP */
+.rsvp .btn{width:100%;padding:12px;text-align:center;font-weight:700}
 
-/* Imagen pareja */
-.menu-pareja{
-  position:absolute;
-  right:10px;
-  bottom:10px;
-  width:100px;
-  opacity:0.9;
-}
+/* FOOTER */
+footer.credits{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:18px}
+.footer-text{font-size:15px;line-height:1.3}
+.dos-img{width:130px;transform:rotate(50deg);display:block}
 
-/* ===========================
-   9. FOOTER
-   =========================== */
-
-footer.credits{
-  margin-top:28px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.dos-img{
-  width:120px;
-  transform:rotate(50deg);
-}
-
-/* ===========================
-   10. AUDIO ICONOS
-   =========================== */
-
-.audio-controls{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  margin-top:14px;
-}
-
-.audio-btn{
-  background:transparent;
-  border:none;
-  padding:0;
-}
-
-.audio-icon{
-  width:42px;
+/* Responsive */
+@media(max-width:600px){
+  .hero-img{height:520px}
+  .verse{bottom:16px;left:12px}
+  .arc-text{font-size:12.5vw}
+  .arc-line2{font-size:9.5vw}
+  .menu-title{font-size:36px;margin-top:44px}
+  .bandera{right:6px;top:-8px;width:30px}
+  .dos-img{width:100px}
 }
