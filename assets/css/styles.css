@@ -132,8 +132,6 @@ header .timer {
 .bandera-wrap{position:relative;width:100%;max-width:420px;margin:0 auto}
 .bandera{width:35px;position:absolute;right:8px;top:-6px}
 
-/* el contenedor donde JS pondrá el link .ics (debajo de la bandera) */
-.ics-wrap{margin-top:36px;text-align:center}
 
 /* DETAILS (fondo vino) */
 .details{background:var(--vino);color:#fff;border-radius:8px;padding:18px;margin-top:18px;text-align:center}
