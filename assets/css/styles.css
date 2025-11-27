@@ -133,7 +133,7 @@ header .timer {
 .bandera-wrap{
   position:relative;
   width:100%;
-  max-width:420px;
+  max-width:750px;
   margin:0 auto;
   min-height: 45px; /* NUEVO: Asegura un espacio mínimo para la bandera */
 }
