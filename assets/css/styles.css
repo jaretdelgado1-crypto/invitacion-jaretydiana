@@ -130,7 +130,7 @@ header .timer {
 /* calendario y bandera */
 .cal-img img{width:100%;max-width:380px;display:block;margin:-6px auto;height:auto}
 .bandera-wrap{position:relative;width:100%;max-width:420px;margin:0 auto}
-.bandera{width:35px;position:absolute;right:8px;top:-6px}
+.bandera{width:35px;position:absolute;right:8px;top:-6px;margin:36px}
 
 
 /* DETAILS (fondo vino) */
