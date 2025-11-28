@@ -124,8 +124,8 @@ header .timer {
 .countdown{background:rgba(255,255,255,0.85);padding:18px 18px 50px 18px;border-radius:8px;margin-top:16px;text-align:center}
 .timer{font-size:30px;color:var(--accent);font-weight:700;margin-top:8px}
 .texto-union{font-size:17px;margin:8px 0 0 0}
-.diciembre{font-family:"Great Vibes";font-size:42px;margin:0}
-.anio-2025{font-size:18px;margin-top:-6px}
+.diciembre{font-family:"Great Vibes";font-size:42px;margin:0; display:inline-block;}
+.anio-2025{font-size:18px;margin-top:-6px; display: inline-block; margin-left: calc(100%-140px);}
 
 /* calendario y bandera */
 /* calendario y bandera */
